@@ -5,13 +5,22 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "GanymedeServlet", urlPatterns = "/ganymede")
-public class GanymedeServlet extends HttpServlet {
+@WebServlet(name = "ResumeServlet", urlPatterns = "/resume")
+public class ResumeServlet extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        out.println("<h1>Hello Ganymede!</h1><hr> <p>yo ganymede,</p><p> you're ok,</p><p> you got this capstone,</p><p> let's do this today!</p>");
+
+        String content = "<h1>My Resume</h1>";
+        content += "<p>I write a lot of code. Check my GitHub</p>";
+        content += "<hr><br>";
+        content += "<a href='https://github.com/'>My GitHub Profile</a><br>";
+        content += "<a href='/portfolio'>My Portfolio</a>";
+
+        out.println(content);
     }
+
+
 }
