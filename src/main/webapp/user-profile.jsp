@@ -12,6 +12,14 @@
 </head>
 <body>
 <h1> your profile</h1>
+
+<%--same things --%>
 <h1>Hi, <%=request.getParameter("username")%></h1>
+<h1>Hi, ${param.username}</h1>
+<%--end same things --%>
+
+<%--See  i have access to--%>
+<h3>${paramValues.toString}</h3>
+
 </body>
 </html>

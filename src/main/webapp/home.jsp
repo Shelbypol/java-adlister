@@ -8,6 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% String firstName = request.getParameter("firstname"); %>
 
+<%! int myNumber = 1; %>
+
+<% request.setAttribute("number", 12); %>
+
 <%! String lastName = "Polasek"; %>
 
 <%--<% if(firstName.equals("shelby")){--%>
@@ -19,12 +23,14 @@
 <head>
     <title>Home Page</title>
 </head>
+
 <body>
+
 <h3>What would you like to do?</h3>
 
 <hr>
 
-<%-- Profile --%>
+<%-- =============== Profile ========================= --%>
 <h3>Go to profile</h3>
 <form action="/user-profile.jsp" method="get">
     <input type="hidden" id="username" name="username" value="Shelby">
@@ -33,22 +39,22 @@
 
 <hr>
 
-<%-- todos page --%>
+<%-- ======================= Todos =================== --%>
 <h3>Add a todo</h3>
 <form action="/todo.jsp" method ="post">
     <input type="text" id="item" name="item">
     <button type="submit">Add to list</button>
 </form>
 
-<%-- Include NavBar --%>
+<%-- ======================= NavBar ================== --%>
 <%@ include file="partials/navbar.jsp" %>
 
 <h1>Hello, <%=firstName%> <%=lastName%> </h1>
 
-<%-- Include about me --%>
+<%-- ======================= About =================== --%>
 <%@include file="partials/aboutme.jsp"%>
 
-<%-- Include Footer --%>
+<%-- ======================= Footer ================== --%>
 <%@ include file="partials/footer.jsp" %>
 
 
