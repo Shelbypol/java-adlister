@@ -15,7 +15,7 @@
 
 <%--same things --%>
 <h1>Hi, <%=request.getParameter("username")%></h1>
-<h1>Hi, ${param.username}</h1>
+<h1>Hi, ${param.username}</h1> <%-- Expression lang --%>
 <%--end same things --%>
 
 <%--See  i have access to--%>

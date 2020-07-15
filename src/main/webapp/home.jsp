@@ -5,12 +5,17 @@
   Time: 1:57 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%----%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% String firstName = request.getParameter("firstname"); %>
 
 <%! int myNumber = 1; %>
 
 <% request.setAttribute("number", 12); %>
+<% request.setAttribute("title", "Home Page"); %>
+
 
 <%! String lastName = "Polasek"; %>
 
@@ -25,7 +30,9 @@
 </head>
 
 <body>
+<h1>Welcome</h1>
 
+<h3>${number}</h3>
 <h3>What would you like to do?</h3>
 
 <hr>
