@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action="/login.jsp">
+<form action="/login.jsp" method="get">
     <button type="submit">Login Page</button>
 </form>
 <%--    <c:if test="true">--%>
