@@ -5,11 +5,15 @@
     <title><%= "some title" %></title>
 </head>
 <body>
-    <c:if test="true">
-        <h1>Variable names should be very descriptive</h1>
-    </c:if>
-    <c:if test="false">
-        <h1>single letter variable names are good</h1>
-    </c:if>
+
+<form action="/login.jsp">
+    <button type="submit">Login Page</button>
+</form>
+<%--    <c:if test="true">--%>
+<%--        <h1>Variable names should be very descriptive</h1>--%>
+<%--    </c:if>--%>
+<%--    <c:if test="false">--%>
+<%--        <h1>single letter variable names are good</h1>--%>
+<%--    </c:if>--%>
 </body>
 </html>
