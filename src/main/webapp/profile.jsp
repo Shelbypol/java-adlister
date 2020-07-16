@@ -13,6 +13,7 @@
 
 <html>
 <head>
+    <%@include file="partials/admin-nav.jsp"%>
     <title>User Profile</title>
 </head>
 <body>
