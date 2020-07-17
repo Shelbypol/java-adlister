@@ -18,7 +18,7 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Let's get all our burgers, and list them here, with links to their individual product pages!
-        McBurgers burgerDao = DaoFactory.getMcBurgersDao();
+        McBurgers burgerDao = controllers.DaoFactory.getMcBurgersDao();
 
         WebJarAssetLocator locator = new WebJarAssetLocator();
         String fullPathToBootstrap = locator.getFullPath("bootstrap.js");
