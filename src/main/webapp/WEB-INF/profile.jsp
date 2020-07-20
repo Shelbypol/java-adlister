@@ -9,7 +9,7 @@
     <jsp:include page="../partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${param.username}, to your profile page!</h1>
+        <h1>Welcome, "${param.username}", to your profile page!</h1>
     </div>
 
 </body>
