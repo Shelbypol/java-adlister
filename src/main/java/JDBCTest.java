@@ -9,6 +9,9 @@
 //        6. test this method out by adding a main method and souting out the return value of the getEmployeeFirstNames method
 //        7. overload the method to take in an integer that determines how many names of employees to return
 
+
+//import java.sql.Driver;
+
 import java.sql.*;
 
 import com.mysql.cj.jdbc.Driver;
@@ -17,7 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JDBCTest {
-    public static List<String> getEmployeeFirstNames() {
+
+    private static List<String> getEmployeeFirstName() {
         List<String> names = new ArrayList<>();
         try {
             DriverManager.registerDriver(new Driver());
@@ -26,41 +30,104 @@ public class JDBCTest {
                     "root",
                     "codeup"
             );
-            Statement stmt = conn.createStatement();
-            String query = "SELECT first_name FROM employees.employees LIMIT 10";
-            ResultSet rs = stmt.executeQuery(query);
+            Statement statement = conn.createStatement();
+
+            ResultSet rs = statement.executeQuery("SELECT first_name FROM employees.employees LIMIT 10");
             while (rs.next()) {
                 names.add(rs.getString(1));
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return names;
     }
-    public static List<String> getEmployeeFirstNames(int numOfNames) {
+
+
+    private static List<String> getEmployeeFirstName(int numOfNames) {
         List<String> names = new ArrayList<>();
         try {
+            DriverManager.registerDriver(new Driver());
             Connection conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost/codeup_test_db?serverTimezone=UTC&useSSL=false",
+                    "jdbc:mysql://localhost/employees?serverTimezone=UTC&useSSL=false",
                     "root",
                     "codeup"
             );
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT first_name FROM employees.employees LIMIT " + numOfNames);
-            while(rs.next()) {
+            Statement statement = conn.createStatement();
+//Watch the " at the end of Limit
+            ResultSet rs = statement.executeQuery("SELECT first_name FROM employees.employees LIMIT" + numOfNames);
+            while (rs.next()) {
                 names.add(rs.getString(1));
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return names;
     }
 
 
-    public static void main (String[]args){
-            System.out.println(getEmployeeFirstNames());
-            System.out.println(getEmployeeFirstNames(3));
-        }
+    public static void main(String[] args) {
+        System.out.println(getEmployeeFirstName());
+        System.out.println(getEmployeeFirstName(4));
     }
+}
+
+
+//import java.sql.*;
+//
+//import com.mysql.cj.jdbc.Driver;
+//
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class JDBCTest {
+//    public static List<String> getEmployeeFirstNames() {
+//        List<String> names = new ArrayList<>();
+//        try {
+//            DriverManager.registerDriver(new Driver());
+//            Connection conn = DriverManager.getConnection(
+//                    "jdbc:mysql://localhost/employees?serverTimezone=UTC&useSSL=false",
+//                    "root",
+//                    "codeup"
+//            );
+//            Statement stmt = conn.createStatement();
+//            String query = "SELECT first_name FROM employees.employees LIMIT 10";
+//            ResultSet rs = stmt.executeQuery(query);
+//            while (rs.next()) {
+//                names.add(rs.getString(1));
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return names;
+//    }
+//    public static List<String> getEmployeeFirstNames(int numOfNames) {
+//        List<String> names = new ArrayList<>();
+//        try {
+//            Connection conn = DriverManager.getConnection(
+//                    "jdbc:mysql://localhost/codeup_test_db?serverTimezone=UTC&useSSL=false",
+//                    "root",
+//                    "codeup"
+//            );
+//            Statement stmt = conn.createStatement();
+//            ResultSet rs = stmt.executeQuery("SELECT first_name FROM employees.employees LIMIT " + numOfNames);
+//            while(rs.next()) {
+//                names.add(rs.getString(1));
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return names;
+//    }
+//
+//
+//    public static void main (String[]args){
+//            System.out.println(getEmployeeFirstNames());
+//            System.out.println(getEmployeeFirstNames(3));
+//        }
+//    }
 
 
