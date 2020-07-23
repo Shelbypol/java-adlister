@@ -13,24 +13,28 @@ public class MySQLAdsDao implements Ads{
     public MySQLAdsDao(Config config){
         try {
             DriverManager.registerDriver(new Driver());
-            this.conn = DriverManager.getConnection(config.getUrl(), config.getUsername(), config.getPassword());
+            this.conn = DriverManager.getConnection(
+                    config.getUrl(),
+                    config.getUsername(),
+                    config.getPassword()
+            );
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
-
     @Override
     public List<Ad> all() {
         List<Ad> ads = new ArrayList<>();
+//        Statement stmt = null;
 
-        Statement stmt = null;
         try {
-            stmt = conn.createStatement();
+            Statement stmt = conn.createStatement();
             String query = "SELECT * FROM ads";
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next()) {
                 ads.add(new Ad(
+                        rs.getLong("id"),
                         rs.getLong("user_id"),
                         rs.getString("title"),
                         rs.getString("description")
@@ -47,8 +51,12 @@ public class MySQLAdsDao implements Ads{
         long lastInsertedId = 0;
         try {
             Statement stmt = conn.createStatement();
-            stmt.executeUpdate(String.format("INSERT INTO ads (user_id, title, description) VALUES ('%d', '%s', '%s')",
-                    ad.getUserId() ,ad.getTitle(), ad.getDescription()), Statement.RETURN_GENERATED_KEYS);
+            stmt.executeUpdate(String.format(
+                    "INSERT INTO ads (user_id, title, description) VALUES ('%d', '%s', '%s')",
+                    ad.getUserId(),
+                    ad.getTitle(),
+                    ad.getDescription()),
+                    Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stmt.getGeneratedKeys();
             if (rs.next()) {
                 lastInsertedId = rs.getLong(1);
