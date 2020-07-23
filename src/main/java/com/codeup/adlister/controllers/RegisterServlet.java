@@ -2,6 +2,7 @@ package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,8 +20,14 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
-        String password = request.getParameter("password");
+        String password = BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt(12));
         String passwordConfirmation = request.getParameter("confirm_password");
+
+
+//        String hashPassword = BCrypt.hashpw(request.getParameter("password"), BCrypt.gensalt(12));
+//        boolean pwMatch2 = BCrypt.checkpw("qwerty", hash2);
+//        boolean validAttempt = password.equals(user.getPassword());
+
 
         // validate input
         boolean inputHasErrors = username.isEmpty()
@@ -36,6 +43,15 @@ public class RegisterServlet extends HttpServlet {
         // create and save a new user
         User user = new User(username, email, password);
         DaoFactory.getUsersDao().insert(user);
+
+//        if(invalidRegister){
+//            response.sendRedirect("/register");
+//        } else {
+//            request.getSession().setAttribute("user", username);
+//            User user = new User(username, email, password);
+//            DaoFactory.getUserDao().insert(user);
+//            response.sendRedirect("/profile");
+//        }
         response.sendRedirect("/login");
     }
 }
