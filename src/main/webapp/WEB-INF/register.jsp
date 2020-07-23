@@ -10,8 +10,6 @@
 <div class="container">
     <h1>Register</h1>
     <form action="/register" method="POST">
-        <label for="id"></label>
-        <input type="hidden" name="id" id="id">
         <div class="form-group">
             <label for="username">Enter Username</label>
             <input id="username" name="username" class="form-control" type="text">

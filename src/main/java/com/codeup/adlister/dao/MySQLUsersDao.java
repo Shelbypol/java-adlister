@@ -45,8 +45,7 @@ public class MySQLUsersDao implements Users {
 
     private String createInsertQuery(User user) {
         return "INSERT INTO users(name, email, password) VALUES "
-                + "(" + user.getId() + ", "
-                + "'" + user.getUsername() + "', "
+                + "(" + user.getUsername() + "', "
                 + "'" + user.getEmail() + "',"
                 + "'" + user.getPassword() + "')";
     }

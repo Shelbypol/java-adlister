@@ -24,7 +24,6 @@ public class RegisterServlet extends HttpServlet {
         String password = request.getParameter("password");
         // TODO: create a new user based off of the submitted information
         User user = new User (
-//                (Long.parseLong(request.getParameter("id"))),
                 username,
                 email,
                 password
