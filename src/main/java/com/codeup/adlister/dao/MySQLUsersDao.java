@@ -26,7 +26,7 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public User findByUsername(String username) {
-        return null;
+        String sql = "SELECT password FROM ? WHERE ? = ?";
     }
 
     @Override
@@ -46,10 +46,4 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-//    private String createInsertQuery(User user) {
-//        return "INSERT INTO users(username, email, password) VALUES "
-//                + "(" + user.getUsername() + "', "
-//                + "'" + user.getEmail() + "',"
-//                + "'" + user.getPassword() + "')";
-//    }
 }
