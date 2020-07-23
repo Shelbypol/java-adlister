@@ -33,15 +33,15 @@ public class LoginServlet extends HttpServlet {
 //            return;
         }
 
-        // TODO: check the submitted password against what you have in your database
-//        boolean validAttempt = false;
+//         TODO: check the submitted password against what you have in your database
+        boolean validAttempt = false;
 
-//        if (validAttempt) {
-//            // TODO: store the logged in user object in the session, instead of just the username
-//            request.getSession().setAttribute("user", username);
-//            response.sendRedirect("/profile");
-//        } else {
-//            response.sendRedirect("/login");
-//        }
+        if (validAttempt) {
+            // TODO: store the logged in user object in the session, instead of just the username
+            request.getSession().setAttribute("user", username);
+            response.sendRedirect("/profile");
+        } else {
+            response.sendRedirect("/login");
+        }
     }
 }
