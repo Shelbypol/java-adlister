@@ -20,6 +20,7 @@ public class CreateAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Ad ad = new Ad(
             1, // for now we'll hardcode the user id
+//                request.getLong("user_id"),
             request.getParameter("title"),
             request.getParameter("description")
         );
