@@ -18,7 +18,7 @@ public class MySQLUsersDao implements Users {
                 config.getPassword()
             );
         } catch (SQLException e) {
-            throw new RuntimeException("Error connecting to the database!", e);
+            throw new RuntimeException("Error connecting to the com.codeup.adlister.database!", e);
         }
     }
 

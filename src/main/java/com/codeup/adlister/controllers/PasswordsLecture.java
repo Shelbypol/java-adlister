@@ -60,7 +60,7 @@ public class PasswordsLecture {
 //            long duration = (endTime - startTime);
 //            System.out.println("bcrypt | cost " + saltRounds + " time to hash: " + duration/1000000 + " ms | " + hashedPw); //divide by 1000000 for ms
 //        }
-        // Must store hashed passwords before saving to database
+        // Must store hashed passwords before saving to com.codeup.adlister.database
         // Do not hash passwords more than once
         // Checking the password should be in the login servlet
         // May do the hashing in the Model or Dao or Servlet (but only once)
