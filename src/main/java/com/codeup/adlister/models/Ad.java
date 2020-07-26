@@ -12,11 +12,26 @@ public class Ad {
 
     public Ad(){}
 
+    public Ad(long id, String title, String description) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.created_date = new Date();
+    }
+
     public Ad(long id, String title, String description, boolean saved) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.saved = saved;
+        this.created_date = new Date();
+    }
+
+    public Ad(long id,long userId, String title, String description, Date created_date) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
         this.created_date = new Date();
     }
 

@@ -42,12 +42,12 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id_FK,  cat_id_FK ,title, description) VALUES (?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO ads(user_id_fk, title, description, created_date) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
-            stmt.setLong(2, ad.getCatId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
+            stmt.setDate(4, (Date) ad.getCreated_date());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -57,13 +57,14 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
             rs.getLong("userId"),
-            rs.getLong("catId"),
             rs.getString("title"),
-            rs.getString("description")
+            rs.getString("description"),
+            rs.getDate("created_date")
         );
     }
 
@@ -73,5 +74,39 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+
+
+
+
+
+
+
+
+
+    @Override
+    public List<Ad> category(long id) {
+        return null;
+    }
+
+    @Override
+    public Ad findOne(long id) {
+        return null;
+    }
+
+    @Override
+    public List<Ad> findAdsForProfileByUserId(long profileId) {
+        return null;
+    }
+
+    @Override
+    public Ad deleteAd(long id) {
+        return null;
+    }
+
+    @Override
+    public List<Ad> adByID(long ads_id) {
+        return null;
     }
 }

@@ -1,9 +1,13 @@
 CREATE DATABASE adlister_db;
 
-DROP DATABASE adlister_db;
+USE  adlister_db;
+
+# CREATE USER 'adlister_user'@'localhost' IDENTIFIED BY 'password';
 
 SELECT user, host FROM mysql.user;
-SHOW GRANTS for 'adlister_user'@'localhost';
+# SHOW GRANTS for 'adlister_user'@'localhost';
+
+
 
 # CREATE USER 'admin'@'adlister_db' IDENTIFIED BY 'codeup';
 # GRANT ALL ON *.* TO 'admin'@'adlister_db';
@@ -28,7 +32,7 @@ CREATE TABLE ads(
     saved boolean,
     created_date DATETIME NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (user_id_fk)  REFERENCES users (id)
+    FOREIGN KEY (user_id_fk)  REFERENCES users (id) ON DELETE CASCADE
 );
 
 CREATE TABLE cats(
