@@ -19,6 +19,10 @@
                 <input id="email" name="email" class="form-control" type="text">
             </div>
             <div class="form-group">
+                <label for="contact-email">Email you wish to be publicly available</label>
+                <input id="contact-email" name="contact-email" class="form-control" type="text">
+            </div>
+            <div class="form-group">
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
