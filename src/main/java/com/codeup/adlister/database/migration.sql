@@ -26,8 +26,8 @@ CREATE TABLE ads(
     FOREIGN KEY (user_id)  REFERENCES users (id)
 );
 
-DROP TABLE users;
-DROP TABLE ads;
+# DROP TABLE users;
+# DROP TABLE ads;
 DESCRIBE users;
 SELECT * FROM users;
 DESCRIBE ads;

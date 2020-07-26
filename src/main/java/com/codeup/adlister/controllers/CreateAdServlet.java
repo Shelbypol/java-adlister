@@ -11,10 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.nio.file.Paths;
 import java.util.Date;
 
@@ -33,16 +30,29 @@ public class CreateAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         User user = (User) request.getSession().getAttribute("user");
 
-        Part filePart = request.getPart("ad-image"); // Retrieves <input type="file" name="file">
-//        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
-        InputStream fileContent = filePart.getInputStream();
+//trying
+
+//        if (request.getContentType()==null) return;
+        // for input type=text controls
+//        String image = (new BufferedReader(new InputStreamReader(request.getPart("ad-image").getInputStream()))).readLine();
+
+//         for input type=file controls
+//        InputStream inStr = request.getPart("ad-image").getInputStream();
+//        char[] charArray = new char[inStr.available()];
+//        new InputStreamReader(inStr).read(charArray);
+//        String contents = new String(charArray);
+//
+////  end trying
+//
+//        Part filePart = request.getPart("ad-image"); // Retrieves <input type="file" name="file">
+//        String fileName = (Paths.get(String.valueOf(filePart.getInputStream())).getFileName().toString()); // MSIE fix.
+//        InputStream fileContent = filePart.getInputStream();
 
         Ad ad = new Ad(
                 user.getId(),
-                request.getParameter("title"),
+                request.getParameter("title")),
                 request.getParameter("description"),
-//                request.getPart("ad-image")
-                (Part) fileContent
+
         );
 
 

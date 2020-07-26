@@ -1,8 +1,10 @@
 package com.codeup.adlister.models;
 
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.Part;
+import java.io.IOException;
 import java.io.InputStream;
-
+@MultipartConfig
 public class Ad {
 //    public static byte created_date;
     private long id;
@@ -26,7 +28,7 @@ public class Ad {
         this.ad_image = ad_image;
     }
 
-    public Ad(String title, String description) {
+    public Ad(long userId, String title, String description) {
         this.userId = userId;
         this.title = title;
         this.description = description;
@@ -69,6 +71,11 @@ public class Ad {
 
     public InputStream getAd_image() {
         return (InputStream) ad_image;
+//        try {
+//            return IOUtils.toByteArray(ad_image.getInputStream());
+//        } catch (IOException ex) {
+//            return null;
+//        }
     }
 
     public void setAd_image(Part ad_image) {
