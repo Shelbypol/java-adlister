@@ -10,10 +10,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
-import java.io.*;
-import java.nio.file.Paths;
-import java.util.Date;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 @MultipartConfig
@@ -48,10 +47,15 @@ public class CreateAdServlet extends HttpServlet {
 //        String fileName = (Paths.get(String.valueOf(filePart.getInputStream())).getFileName().toString()); // MSIE fix.
 //        InputStream fileContent = filePart.getInputStream();
 
+        File file = new File(request.getParameter("ad-image"));
+        FileInputStream fis = new FileInputStream(file);
+
         Ad ad = new Ad(
-                user.getId(),
-                request.getParameter("title")),
-                request.getParameter("description"),
+            user.getId(),
+            request.getParameter("title"),
+            request.getParameter("description")
+//            fis
+
 
         );
 

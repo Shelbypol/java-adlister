@@ -20,7 +20,7 @@ CREATE TABLE ads(
     user_id INT UNSIGNED NOT NULL,
     title VARCHAR(100) NOT NULL,
     description TEXT NOT NULL,
-    ad_image MEDIUMBLOB,
+    ad_image BLOB,
     created_date DATETIME,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id)  REFERENCES users (id)

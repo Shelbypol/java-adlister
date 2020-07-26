@@ -5,9 +5,7 @@ import com.mysql.cj.jdbc.Driver;
 import models.Config;
 
 import javax.servlet.annotation.MultipartConfig;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,13 +40,17 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Long insert(Ad ad) {
+
+
         try {
             String insertQuery = "INSERT INTO ads(user_id, title, description, ad_image) VALUES (?, ?, ?, ?)";
+
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
-            stmt.setBinaryStream(4, ad.getAd_image());
+//            stmt.setBinaryStream(4, ad.getAd_image());
+//            stmt.setBinaryStream(4, ad.getAd_image());
 //            stmt.setDate(5, (Date) ad.getCreated_date());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();

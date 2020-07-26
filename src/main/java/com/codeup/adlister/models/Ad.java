@@ -2,6 +2,7 @@ package com.codeup.adlister.models;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.Part;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 @MultipartConfig
@@ -11,7 +12,7 @@ public class Ad {
     private long userId;
     private String title;
     private String description;
-    private Part ad_image;
+//    private FileInputStream ad_image;
 //    public static Date created_date = new Date();
 
     public Ad(long id, long userId, String title, String description) {
@@ -21,18 +22,18 @@ public class Ad {
         this.description = description;
     }
 
-    public Ad(long userId, String title, String description, Part ad_image) {
-        this.userId = userId;
-        this.title = title;
-        this.description = description;
-        this.ad_image = ad_image;
-    }
-
     public Ad(long userId, String title, String description) {
         this.userId = userId;
         this.title = title;
         this.description = description;
+//        this.ad_image = ad_image;
     }
+
+//    public Ad(long userId, String title, String description) {
+//        this.userId = userId;
+//        this.title = title;
+//        this.description = description;
+//    }
 
 //    public Ad(long id, String title, String description, Part part) {
 //    }
@@ -78,7 +79,7 @@ public class Ad {
 //        }
     }
 
-    public void setAd_image(Part ad_image) {
+    public void setAd_image(FileInputStream ad_image) {
         this.ad_image = ad_image;
     }
 
