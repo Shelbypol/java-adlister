@@ -17,6 +17,20 @@
                 <label for="description">Description</label>
                 <textarea id="description" name="description" class="form-control" type="text"></textarea>
             </div>
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" name="category" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Community</a>
+                    <a class="dropdown-item" href="#">Services</a>
+                    <a class="dropdown-item" href="#">Housing</a>
+                    <a class="dropdown-item" href="#">For Sale</a>
+                    <a class="dropdown-item" href="#">Jobs</a>
+                </div>
+            </div>
+
             <input type="submit" class="btn btn-block btn-primary">
         </form>
     </div>
