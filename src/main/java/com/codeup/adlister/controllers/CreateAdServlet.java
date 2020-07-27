@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import static java.lang.Long.parseLong;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
@@ -27,12 +31,19 @@ public class CreateAdServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
 
+        Date now = new Date();
+        String pattern = "yyyy-MM-dd";
+        SimpleDateFormat formatter = new SimpleDateFormat(pattern);
+        String mysqlDateString = formatter.format(now);
+
         Ad ad = new Ad(
             user.getId(),
-            request.getParameter("category"),
             request.getParameter("title"),
-            request.getParameter("description")
+            request.getParameter("description"),
+            mysqlDateString
         );
+        DaoFactory.getCatsDao().insert(DaoFactory.getAdsDao().insert(ad), parseLong(request.getParameter("category")));
+
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
     }

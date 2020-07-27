@@ -3,7 +3,7 @@ CREATE DATABASE adlister_db;
 USE  adlister_db;
 
 # CREATE USER 'adlister_user'@'localhost' IDENTIFIED BY 'password';
-
+DROP DATABASE adlister_db;
 SELECT user, host FROM mysql.user;
 # SHOW GRANTS for 'adlister_user'@'localhost';
 
@@ -17,9 +17,9 @@ SHOW TABLES;
 
 CREATE TABLE users(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    contact_email VARCHAR(100) UNIQUE NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    contact_email VARCHAR(255),
     password VARCHAR(150) NOT NULL,
     PRIMARY KEY (id)
 );
@@ -30,14 +30,14 @@ CREATE TABLE ads(
     title VARCHAR(255) NOT NULL,
     description TEXT,
     saved boolean,
-    created_date DATETIME NOT NULL,
+    created_date DATE,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id_fk)  REFERENCES users (id) ON DELETE CASCADE
 );
 
 CREATE TABLE cats(
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    cat_name VARCHAR(50) NOT NULL ,
+    cat_name VARCHAR(155) NOT NULL ,
     PRIMARY KEY (id)
 );
 
@@ -71,5 +71,7 @@ CREATE TABLE ad_img(
 
 DESCRIBE users;
 SELECT * FROM users;
-DESCRIBE ads;
-SELECT * FROM ads;
+DESCRIBE cats;
+SELECT * FROM cats;
+
+TRUNCATE cats;

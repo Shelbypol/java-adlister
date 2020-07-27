@@ -5,6 +5,8 @@ import com.mysql.cj.jdbc.Driver;
 import models.Config;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MySQLCatsDao implements Cats {
     private Connection connection;
@@ -21,42 +23,57 @@ public class MySQLCatsDao implements Cats {
             throw new RuntimeException("Error connecting to the database!", e);
         }
     }
-
     @Override
-    public Cat findByCategory(String catName) {
-        String query = "SELECT * FROM cats WHERE cat_name = ?";
+    public List<Cat> All() {
+        PreparedStatement stmt = null;
         try {
-            PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setString(1, catName);
-            return extractCat(stmt.executeQuery());
+            stmt = connection.prepareStatement("SELECT * FROM cats order by id");
+            ResultSet rs = stmt.executeQuery();
+            return createCategoriesFromResults(rs);
         } catch (SQLException e) {
-            throw new RuntimeException("Error finding category", e);
+            throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
 
+//    @Override
+//    public List<Cat> cat() {
+//        return null;
+//    }
+
     private Cat extractCat(ResultSet rs) throws SQLException {
-        if (!rs.next()) {
-            return null;
-        }
         return new Cat(
-                rs.getLong("id"),
-                rs.getString("cat-name")
+                rs.getInt("id"),
+                rs.getString("name")
         );
     }
 
-    @Override
-    public Long insert(Cat cat) {
-        String query = "INSERT INTO cats(cat_name) VALUES (?)";
-        try {
-            PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, cat.getCatName());
-            stmt.executeUpdate();
-            ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
-        } catch (SQLException e) {
-            throw new RuntimeException("Error adding category", e);
+    private List<Cat> createCategoriesFromResults(ResultSet rs) throws SQLException {
+        List<Cat> cat = new ArrayList<>();
+        while (rs.next()) {
+            cat.add(extractCat(rs));
         }
+        return cat;
+    }
+
+    @Override
+    public Long insert(Long adsIdFk , Long catsIdFk) {
+        try {
+            String insertQuery = "INSERT INTO ad_cats(ads_id_fk, cats_id_fk) VALUES (?, ?)";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, adsIdFk);
+            stmt.setLong(2, catsIdFk);
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error creating a new ad.", e);
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteAd(long id) {
+
     }
 }
+
 
