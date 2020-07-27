@@ -12,14 +12,16 @@ public class Ad {
     private boolean saved;
     private String created_date;
 
-//    String pattern = "yyyy-MM-dd";
-//    SimpleDateFormat formatter = new SimpleDateFormat(pattern);
-//    String mysqlDateString = formatter.format(created_date);
-
     public Ad() {}
 
-    public Ad(long id, String title, String description, String created_date) {
-        this.id = id;
+    public Ad(String title, String description, String created_date) {
+        this.title = title;
+        this.description = description;
+        this.created_date =created_date;
+    }
+
+    public Ad(long userId, String title, String description, String created_date) {
+        this.id = userId;
         this.title = title;
         this.description = description;
         this.created_date =created_date;
