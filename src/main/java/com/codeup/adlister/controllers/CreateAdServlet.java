@@ -42,10 +42,10 @@ public class CreateAdServlet extends HttpServlet {
             request.getParameter("description"),
             mysqlDateString
         );
-//        DaoFactory.getAdsDao().insert(ad);
+        DaoFactory.getAdsDao().insert(ad);
 
         long category = parseLong(request.getParameter("category"));
-//        long insert = DaoFactory.getAdsDao().insert(ad);
+        long insert = DaoFactory.getAdsDao().insert(ad);
 
         DaoFactory.getCatsDao().insert(ad.getUserId(), category);
 

@@ -14,7 +14,7 @@ USE adlister_db;
 SHOW TABLES;
 
 CREATE TABLE users(
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
     username VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     contact_email VARCHAR(255),
@@ -22,14 +22,9 @@ CREATE TABLE users(
     PRIMARY KEY (id)
 );
 
-CREATE TABLE cats(
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    cat_name VARCHAR(155) NOT NULL ,
-    PRIMARY KEY (id)
-);
 
 CREATE TABLE ads(
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INTEGER UNSIGNED NOT NULL,
     title VARCHAR(255) NOT NULL,
     description TEXT,
@@ -39,6 +34,12 @@ CREATE TABLE ads(
     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
 
+CREATE TABLE cats(
+    id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+    cat_name VARCHAR(155) NOT NULL ,
+    PRIMARY KEY (id)
+);
+
 CREATE TABLE ad_cats(
     ads_id INTEGER UNSIGNED NOT NULL,
     cats_id INTEGER UNSIGNED NOT NULL,
@@ -46,6 +47,7 @@ CREATE TABLE ad_cats(
     FOREIGN KEY (cats_id) REFERENCES cats (id)
 );
 
+# ad primary id is starting at 1 more than what it is...why?
 
 DESCRIBE users;
 DESCRIBE ads;
@@ -55,14 +57,14 @@ SELECT * FROM cats;
 SELECT * FROM ad_cats;
 
 # DROP TABLE users;
-DROP TABLE ads;
-DROP TABLE cats;
-DROP TABLE ad_cats;
+# DROP TABLE ads;
+# DROP TABLE cats;
+# DROP TABLE ad_cats;
 # DROP TABLE images;
 
-# INSERT INTO ads (user_id,title ,description, saved, created_date) VALUES (1,'TEST', 'test description', false, '2020-07-27');
+INSERT INTO ads (user_id,title ,description, saved, created_date) VALUES (1,'TEST', 'test description', false, '2020-07-27');
 # INSERT INTO ads (id, user_id,title ,description, saved, created_date) VALUES (2 ,1,'TEST 2 ', 'test description 2', true , '2020-07-27');
-# INSERT INTO ad_cats (ads_id, cats_id) VALUES (2, 5);
+INSERT INTO ad_cats (ads_id, cats_id) VALUES (2, 5);
 # INSERT INTO ad_cats (ads_id_fk, cats_id_fk) VALUES (4, 4);
 
 
