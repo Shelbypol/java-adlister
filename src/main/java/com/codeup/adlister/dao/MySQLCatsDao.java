@@ -58,10 +58,11 @@ public class MySQLCatsDao implements Cats {
     @Override
     public Long insert(Long adsIdFk , Long catsIdFk) {
         try {
+//            String insertQuery = "INSERT INTO cats(ad_id_fk) VALUES (?)";
             String insertQuery = "INSERT INTO ad_cats(ads_id_fk, cats_id_fk) VALUES (?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, adsIdFk);
-            stmt.setLong(2, catsIdFk);
+//            stmt.setLong(2, catsIdFk);
 
             stmt.executeUpdate();
         } catch (SQLException e) {

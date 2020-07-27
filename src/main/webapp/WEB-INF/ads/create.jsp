@@ -20,7 +20,7 @@
         <div class="form-group">
             <label class="category" for="category">Category</label>
             <select name="category" id="category">
-                <option value="1">For Sale</option>
+                <option value="1" selected >For Sale</option>
                 <option value="2">Community</option>
                 <option value="3">Housing</option>
                 <option value="4">Services</option>
