@@ -47,39 +47,13 @@ public class CreateAdServlet extends HttpServlet {
             mysqlDateString
         );
 
-        int category = Integer.parseInt((request.getParameter("category")));
-//        long insert = (DaoFactory.getAdsDao().insert(ad));
+        long category = Long.parseLong((request.getParameter("category")));
+        long insert = (DaoFactory.getAdsDao().insert(ad));
 
         DaoFactory.getAdsDao().insert(ad);
 
-//        DaoFactory.getCatsDao().insert(insert, category);
+        DaoFactory.getCatsDao().insert(insert, category);
         response.sendRedirect("/ads");
     }
 }
 
-
-
-
-
-
-//        String category = (request.getParameter("category"));
-//        int cat;
-//        switch (category){
-//            case "For Sale":
-//                cat = 1;
-//                break;
-//            case "Community":
-//                cat = 2;
-//                break;
-//            case "Housing":
-//                cat = 3;
-//                break;
-//            case "Services":
-//                cat = 4;
-//                break;
-//            case "Jobs":
-//                cat = 5;
-//                break;
-//            default:
-//                throw new IllegalStateException("Unexpected value: " + category);
-//        }

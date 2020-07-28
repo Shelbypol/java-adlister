@@ -60,22 +60,18 @@ DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
 
 
+CREATE TABLE images(
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    ad_img MEDIUMBLOB,
+    PRIMARY KEY (id)
+);
 
-
-
-
-# CREATE TABLE images(
-#     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-#     ad_img MEDIUMBLOB,
-#     PRIMARY KEY (id)
-# );
-
-# CREATE TABLE ad_img(
-#    ads_id_fk INT UNSIGNED NOT NULL,
-#    ad_img_id_fk INT UNSIGNED NOT NULL,
-#    FOREIGN KEY (ads_id_fk) REFERENCES ads (id),
-#    FOREIGN KEY (ad_img_id_fk) REFERENCES images (id)
-# );
+CREATE TABLE ad_img(
+   ads_id INT UNSIGNED NOT NULL,
+   ad_img_id INT UNSIGNED NOT NULL,
+   FOREIGN KEY (ads_id) REFERENCES ads (id),
+   FOREIGN KEY (ad_img_id) REFERENCES images (id)
+);
 
 
 

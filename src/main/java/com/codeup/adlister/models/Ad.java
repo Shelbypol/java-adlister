@@ -1,9 +1,5 @@
 package com.codeup.adlister.models;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-//import java.util.Date;
-
 public class Ad {
     private long id;
     private long userId;
@@ -12,15 +8,8 @@ public class Ad {
     private boolean saved;
     private String created_date;
 
-    public Ad() {}
+//    public Ad() {}
 
-
-    public Ad(long userId, String title, String description, String created_date) {
-        this.id = userId;
-        this.title = title;
-        this.description = description;
-        this.created_date =created_date;
-    }
     public Ad(long id, long userId, String title, String description, boolean saved, String created_date) {
         this.id = id;
         this.userId = userId;
@@ -30,17 +19,23 @@ public class Ad {
         this.created_date = created_date;
     }
 
+    public Ad(long userId, String title, String description, String created_date) {
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.created_date =created_date;
+    }
+
 //    public Ad(String title, String description, String created_date) {
 //        this.title = title;
 //        this.description = description;
 //        this.created_date =created_date;
 //    }
-
+//
 //    public Ad(long userId, String title, String description) {
-//        this.id = userId;
+//        this.userId = userId;
 //        this.title = title;
 //        this.description = description;
-//
 //    }
 //
 //    public Ad(long id, String title, String description, boolean saved, String created_date) {
@@ -50,7 +45,7 @@ public class Ad {
 //        this.saved = saved;
 //        this.created_date =created_date;
 //    }
-//
+
 
     public long getId() {
         return id;

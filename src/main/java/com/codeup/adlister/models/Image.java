@@ -4,6 +4,12 @@ public class Image {
     private long id;
     private byte[] image;
 
+
+    public Image(long id, byte[] image) {
+        this.id = id;
+        this.image = image;
+    }
+
     public long getId() {
         return id;
     }
@@ -20,9 +26,5 @@ public class Image {
         this.image = image;
     }
 
-    public Image(long id, byte[] image) {
-        this.id = id;
-        this.image = image;
-    }
 
 }
