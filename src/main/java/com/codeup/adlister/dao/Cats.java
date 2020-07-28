@@ -9,7 +9,7 @@ public interface Cats {
 
 //    List<Cat> cat();
 
-    Long insert(Long adsIdFk , Long catsIdFk);
+    Integer insert(int adsIdFk , int catsIdFk);
 
     void deleteAd(long id);
 

@@ -2,13 +2,9 @@ CREATE DATABASE adlister_db;
 
 USE  adlister_db;
 
-# CREATE USER 'adlister_user'@'localhost' IDENTIFIED BY 'password';
 DROP DATABASE adlister_db;
 # SELECT user, host FROM mysql.user;
 # SHOW GRANTS for 'adlister_user'@'localhost';
-
-# CREATE USER 'admin'@'adlister_db' IDENTIFIED BY 'codeup';
-# GRANT ALL ON *.* TO 'admin'@'adlister_db';
 
 USE adlister_db;
 SHOW TABLES;
@@ -22,14 +18,13 @@ CREATE TABLE users(
     PRIMARY KEY (id)
 );
 
-
 CREATE TABLE ads(
     id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INTEGER UNSIGNED NOT NULL,
     title VARCHAR(255) NOT NULL,
     description TEXT,
     saved boolean,
-    created_date DATE,
+    created_date VARCHAR(20),
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
@@ -47,8 +42,7 @@ CREATE TABLE ad_cats(
     FOREIGN KEY (cats_id) REFERENCES cats (id)
 );
 
-# ad primary id is starting at 1 more than what it is...why?
-
+# ad primary id is incrementing but not displaying when run through form...why?
 DESCRIBE users;
 DESCRIBE ads;
 SELECT * FROM users;
@@ -56,16 +50,18 @@ SELECT * FROM ads;
 SELECT * FROM cats;
 SELECT * FROM ad_cats;
 
-# DROP TABLE users;
-# DROP TABLE ads;
-# DROP TABLE cats;
-# DROP TABLE ad_cats;
-# DROP TABLE images;
 
-INSERT INTO ads (user_id,title ,description, saved, created_date) VALUES (1,'TEST', 'test description', false, '2020-07-27');
-# INSERT INTO ads (id, user_id,title ,description, saved, created_date) VALUES (2 ,1,'TEST 2 ', 'test description 2', true , '2020-07-27');
-INSERT INTO ad_cats (ads_id, cats_id) VALUES (2, 5);
-# INSERT INTO ad_cats (ads_id_fk, cats_id_fk) VALUES (4, 4);
+INSERT INTO ads (user_id ,title, description, created_date) VALUES ( 1,'TEST', 'test description','2020-07-27');
+INSERT INTO ad_cats (ads_id, cats_id) VALUES (1, 2);
+
+DROP TABLE IF EXISTS ad_cats;
+DROP TABLE IF EXISTS cats;
+DROP TABLE IF EXISTS ads;
+DROP TABLE IF EXISTS users;
+
+
+
+
 
 
 # CREATE TABLE images(

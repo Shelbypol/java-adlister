@@ -8,6 +8,7 @@
 <body>
 <div class="container">
     <h1>Create a new Ad</h1>
+    <h1>${userId}</h1>
     <form action="/ads/create" method="post">
         <div class="form-group">
             <label for="title">Title</label>
@@ -19,12 +20,12 @@
         </div>
         <div class="form-group">
             <label class="category" for="category">Category</label>
-            <select name="category" id="category">
-                <option value="1" selected >For Sale</option>
-                <option value="2">Community</option>
-                <option value="3">Housing</option>
-                <option value="4">Services</option>
-                <option value="5">Jobs</option>
+            <select class="dropdown" name="category" id="category">
+                <option value = "1" selected >For Sale</option>
+                <option value = "2" >Community</option>
+                <option value = "3" >Housing</option>
+                <option value = "4" >Services</option>
+                <option value = "5" >Jobs</option>
             </select>
         </div>
         <input type="submit" class="btn btn-block btn-primary">
@@ -32,3 +33,9 @@
 </div>
 </body>
 </html>
+
+<%--<option ${param.category == '1'} selected >For Sale</option>--%>
+<%--<option ${param.category == '2'} >Community</option>--%>
+<%--<option ${param.category == '3'} >Housing</option>--%>
+<%--<option ${param.category == '4'} >Services</option>--%>
+<%--<option ${param.category == '5'} >Jobs</option>--%>

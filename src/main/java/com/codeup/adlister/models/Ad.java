@@ -20,6 +20,13 @@ public class Ad {
         this.created_date =created_date;
     }
 
+    public Ad(long userId, String title, String description) {
+        this.id = userId;
+        this.title = title;
+        this.description = description;
+
+    }
+
     public Ad(long userId, String title, String description, String created_date) {
         this.id = userId;
         this.title = title;
@@ -48,7 +55,7 @@ public class Ad {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
