@@ -14,18 +14,6 @@ public class Ad {
 
     public Ad() {}
 
-    public Ad(String title, String description, String created_date) {
-        this.title = title;
-        this.description = description;
-        this.created_date =created_date;
-    }
-
-    public Ad(long userId, String title, String description) {
-        this.id = userId;
-        this.title = title;
-        this.description = description;
-
-    }
 
     public Ad(long userId, String title, String description, String created_date) {
         this.id = userId;
@@ -33,15 +21,6 @@ public class Ad {
         this.description = description;
         this.created_date =created_date;
     }
-
-    public Ad(long id, String title, String description, boolean saved, String created_date) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.saved = saved;
-        this.created_date =created_date;
-    }
-
     public Ad(long id, long userId, String title, String description, boolean saved, String created_date) {
         this.id = id;
         this.userId = userId;
@@ -50,6 +29,28 @@ public class Ad {
         this.saved = saved;
         this.created_date = created_date;
     }
+
+//    public Ad(String title, String description, String created_date) {
+//        this.title = title;
+//        this.description = description;
+//        this.created_date =created_date;
+//    }
+
+//    public Ad(long userId, String title, String description) {
+//        this.id = userId;
+//        this.title = title;
+//        this.description = description;
+//
+//    }
+//
+//    public Ad(long id, String title, String description, boolean saved, String created_date) {
+//        this.id = id;
+//        this.title = title;
+//        this.description = description;
+//        this.saved = saved;
+//        this.created_date =created_date;
+//    }
+//
 
     public long getId() {
         return id;
