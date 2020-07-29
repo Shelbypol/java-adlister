@@ -13,9 +13,10 @@
     <h1>Here Are all the ads!</h1>
 
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
+        <div class="col-md-3">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+<%--            <p>${ad.ad_img}</p>--%>
         </div>
     </c:forEach>
 </div>

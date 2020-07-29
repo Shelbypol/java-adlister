@@ -1,5 +1,8 @@
 package com.codeup.adlister.models;
 
+import javax.servlet.http.Part;
+import java.io.InputStream;
+
 public class Ad {
     private long id;
     private long userId;
@@ -7,23 +10,33 @@ public class Ad {
     private String description;
     private boolean saved;
     private String created_date;
+    private InputStream adImg;
 
 //    public Ad() {}
 
-    public Ad(long id, long userId, String title, String description, boolean saved, String created_date) {
+    public Ad(long id, long userId, String title, String description, boolean saved, String created_date, InputStream adImg) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.description = description;
         this.saved = saved;
         this.created_date = created_date;
+        this.adImg = adImg;
     }
 
     public Ad(long userId, String title, String description, String created_date) {
         this.userId = userId;
         this.title = title;
         this.description = description;
-        this.created_date =created_date;
+        this.created_date =  created_date;
+    }
+
+    public Ad(long userId, String title, String description, String created_date, InputStream adImg) {
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.created_date = created_date;
+        this.adImg = adImg;
     }
 
 //    public Ad(String title, String description, String created_date) {
@@ -83,8 +96,7 @@ public class Ad {
         return created_date;
     }
 
-    public void setCreated_date(String created_date) {
-    }
+    public void setCreated_date(String created_date) {}
 
     public boolean isSaved() {
         return saved;
@@ -92,5 +104,13 @@ public class Ad {
 
     public void setSaved(boolean saved) {
         this.saved = saved;
+    }
+
+    public InputStream getAdImg() {
+        return adImg;
+    }
+
+    public void setAdImg (InputStream adImg) {
+        this.adImg = adImg;
     }
 }

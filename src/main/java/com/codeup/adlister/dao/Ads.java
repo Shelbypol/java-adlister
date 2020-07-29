@@ -2,6 +2,8 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 public interface Ads {
@@ -20,4 +22,5 @@ public interface Ads {
 
     List<Ad> adByID(long ads_id);
 
+    FileInputStream img(String adImg) throws FileNotFoundException;
 }

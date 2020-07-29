@@ -25,6 +25,7 @@ CREATE TABLE ads(
     description TEXT,
     saved boolean,
     created_date VARCHAR(20),
+    ad_img BLOB,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
@@ -58,20 +59,21 @@ DROP TABLE IF EXISTS ad_cats;
 DROP TABLE IF EXISTS cats;
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
+# DROP TABLE images;
 
 
-CREATE TABLE images(
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    ad_img MEDIUMBLOB,
-    PRIMARY KEY (id)
-);
+# CREATE TABLE images(
+#     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+#     ad_img MEDIUMBLOB,
+#     PRIMARY KEY (id)
+# );
 
-CREATE TABLE ad_img(
-   ads_id INT UNSIGNED NOT NULL,
-   ad_img_id INT UNSIGNED NOT NULL,
-   FOREIGN KEY (ads_id) REFERENCES ads (id),
-   FOREIGN KEY (ad_img_id) REFERENCES images (id)
-);
+# CREATE TABLE ad_img(
+#    ads_id INT UNSIGNED NOT NULL,
+#    ad_img_id INT UNSIGNED NOT NULL,
+#    FOREIGN KEY (ads_id) REFERENCES ads (id),
+#    FOREIGN KEY (ad_img_id) REFERENCES images (id)
+# );
 
 
 

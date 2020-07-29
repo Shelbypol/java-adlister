@@ -9,7 +9,7 @@
 <div class="container">
     <h1>Create a new Ad</h1>
     <h1>${userId}</h1>
-    <form action="/ads/create" method="post">
+    <form action="/ads/create" method="post" enctype="MULTIPART/FORM-DATA">
         <div class="form-group">
             <label for="title">Title</label>
             <input id="title" name="title" class="form-control" type="text">
@@ -28,8 +28,19 @@
                 <option value = "5" >Jobs</option>
             </select>
         </div>
+        <div class="file-field">
+            <div class="btn btn-primary btn-sm float-right">
+                <span>Choose file</span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file" size="50" type="text" name="adImg" placeholder="Upload your file">
+            </div>
+        </div>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
+
+
 </div>
 </body>
 </html>

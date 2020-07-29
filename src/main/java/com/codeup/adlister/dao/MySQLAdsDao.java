@@ -4,6 +4,11 @@ import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 import models.Config;
 
+import javax.servlet.http.Part;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,14 +42,23 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public FileInputStream img(String img) throws FileNotFoundException {
+        File image = new File(img);
+        FileInputStream fis = new FileInputStream ( image );
+        return fis;
+    }
+
+    @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description, created_date) VALUES (?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO ads(user_id, title, description, created_date, ad_img) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
             stmt.setString(4, ad.getCreated_date());
+//            FileInputStream fin = new FileInputStream("ad_img");
+            stmt.setBinaryStream(5, ad.getAdImg());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -79,7 +93,6 @@ public class MySQLAdsDao implements Ads {
         return null;
     }
 
-
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
@@ -87,7 +100,8 @@ public class MySQLAdsDao implements Ads {
             rs.getString("title"),
             rs.getString("description"),
             rs.getBoolean("saved"),
-            rs.getString("created_date")
+            rs.getString("created_date"),
+                (InputStream) rs.getBinaryStream("ad_img")
         );
     }
 
