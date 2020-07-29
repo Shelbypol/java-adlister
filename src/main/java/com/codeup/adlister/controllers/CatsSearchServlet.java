@@ -13,12 +13,12 @@ import java.util.List;
 
 import static java.lang.Long.parseLong;
 
-@WebServlet(name = "controllers.CatsSearchServlet", urlPatterns = "/searchCategory")
+@WebServlet(name ="controllers.CatsSearchServlet", urlPatterns = "/searchCategory")
 public class CatsSearchServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        long cat = request.getParameter("category");
+        long cat = Long.parseLong(request.getParameter("category"));
         System.out.println(cat);
 
         List<Ad> category = DaoFactory.getAdsDao().category(cat);

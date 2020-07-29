@@ -11,7 +11,7 @@
 <head>
     <title>Title</title>
     <style>
-        <%@include file="/sidenav.css" %>
+        <%@include file="/css/sidenav.css" %>
     </style>
 </head>
 <body>
@@ -40,15 +40,17 @@
         <li class="searchCat">
             <form action="/searchCategory" method="get">
             <div>
-                <input type="submit" name="category" value="1" placeholder="For Sale" class="btn btn-secondary catBtn">
+                <input type="submit" name="category" value="1" placeholder="All Ads" class="btn btn-secondary catBtn">
                 <br>
-                <input type="submit" name="category" value="2" placeholder="Community" class="btn btn-secondary catBtn">
+                <input type="submit" name="category" value="2" placeholder="For Sale" class="btn btn-secondary catBtn">
                 <br>
-                <input type="submit" name="category" value="3" placeholder="Housing" class="btn btn-secondary catBtn">
+                <input type="submit" name="category" value="3" placeholder="Community" class="btn btn-secondary catBtn">
                 <br>
-                <input type="submit" name="category" value="4" placeholder="Services" class="btn btn-secondary catBtn">
+                <input type="submit" name="category" value="4" placeholder="Housing" class="btn btn-secondary catBtn">
                 <br>
-                <input type="submit" name="category" value="5" placeholder="Jobs" class="btn btn-secondary catBtn">
+                <input type="submit" name="category" value="5" placeholder="Services" class="btn btn-secondary catBtn">
+                <br>
+                <input type="submit" name="category" value="6" placeholder="Jobs" class="btn btn-secondary catBtn">
 
             </div>
             </form>

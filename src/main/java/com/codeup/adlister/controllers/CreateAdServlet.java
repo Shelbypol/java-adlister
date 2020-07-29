@@ -22,7 +22,7 @@ import static java.lang.Integer.parseInt;
 import static java.lang.Long.parseLong;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
-@MultipartConfig(maxFileSize = 16177215)
+//@MultipartConfig(maxFileSize = 16177215)
 public class CreateAdServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
