@@ -5,50 +5,146 @@
   Time: 9:13 PM
   To change this template use File | Settings | File Templates.
 --%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
+    <style>
+        <%@include file="/sidenav.css" %>
+    </style>
 </head>
 <body>
-<style><%@include file="sideNav.css"%></style>
+<%--<nav class="navbar navbar-expand-lg navbar-light bg-light sideNav">--%>
+    <ul class="sideWords navbar-brand sideUl">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <%--        WELCOME --%>
+        <li class="welcome">
+            <a class="" href="#">
+                <c:choose>
+                    <c:when test="${sessionScope.user}">
+                        <h2>Welcome, ${sessionScope.user.username}!</h2>
+                    </c:when>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
+                    <c:otherwise>
+                        <h2>Welcome!</h2>
+                    </c:otherwise>
+                </c:choose>
+            </a>
+        <hr>
+        </li>
+
+        <%--        SEARCH ADS--%>
+        <li class="searchAd">
+            <form class="form-inline my-2 my-lg-0 navBtn">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search ads" aria-label="Search">
+            </form>
+        </li>
+
+        <hr>
+
+        <%--   CATEGORY  --%>
+        <li class="searchCat">
+            <div>
+                <h3>Search Categories</h3>
+                <%--                <div class="form-group">--%>
+                <%--                    <label class="category" for="category"></label>--%>
+                <button class="btn btn-secondary catBtn" type="button">
+                    For Sale
+                </button>
+                <br>
+                <button class="btn btn-secondary catBtn" type="button">
+                    Community
+                </button>
+                <br>
+                <button class="btn btn-secondary catBtn" type="button">
+                    Housing
+                </button>
+                <br>
+                <button class="btn btn-secondary catBtn" type="button">
+                    Services
+                </button>
+                <br>
+                <button class="btn btn-secondary catBtn" type="button">
+                    Jobs
+                </button>
+            </div>
+        </li>
+
+        <hr>
+
+        <%--            CREATE AD--%>
+        <li class="catBtn">
+            <button class="btn btn-secondary" type="button" href="#">Create Ad</button>
+        </li>
+    </ul>
+<%--</nav>--%>
 </body>
 </html>
+
+
+<%--<nav class="navbar navbar-expand-lg navbar-light bg-light sideNav">--%>
+<%--    <ul class="sideWords navbar-brand">--%>
+
+<%--        &lt;%&ndash;        WELCOME &ndash;%&gt;--%>
+<%--        <li class="welcome">--%>
+<%--            <a class="" href="#">--%>
+<%--                <c:choose>--%>
+<%--                    <c:when test="${sessionScope.user}">--%>
+<%--                        <h2>Welcome, ${sessionScope.user.username}!</h2>--%>
+<%--                    </c:when>--%>
+
+<%--                    <c:otherwise>--%>
+<%--                        <h2>Welcome!</h2>--%>
+<%--                    </c:otherwise>--%>
+<%--                </c:choose>--%>
+<%--            </a>--%>
+<%--            <hr>--%>
+<%--        </li>--%>
+
+<%--        &lt;%&ndash;        SEARCH ADS&ndash;%&gt;--%>
+<%--        <li class="searchAd">--%>
+<%--            <form class="form-inline my-2 my-lg-0 navBtn">--%>
+<%--                <input class="form-control mr-sm-2" type="search" placeholder="Search ads" aria-label="Search">--%>
+<%--            </form>--%>
+<%--        </li>--%>
+
+<%--        <hr>--%>
+
+<%--        &lt;%&ndash;   CATEGORY  &ndash;%&gt;--%>
+<%--        <li class="searchCat">--%>
+<%--            <div>--%>
+<%--                <h3>Search Categories</h3>--%>
+<%--                &lt;%&ndash;                <div class="form-group">&ndash;%&gt;--%>
+<%--                &lt;%&ndash;                    <label class="category" for="category"></label>&ndash;%&gt;--%>
+<%--                <button class="btn btn-secondary catBtn" type="button">--%>
+<%--                    For Sale--%>
+<%--                </button>--%>
+<%--                <br>--%>
+<%--                <button class="btn btn-secondary catBtn" type="button">--%>
+<%--                    Community--%>
+<%--                </button>--%>
+<%--                <br>--%>
+<%--                <button class="btn btn-secondary catBtn" type="button">--%>
+<%--                    Housing--%>
+<%--                </button>--%>
+<%--                <br>--%>
+<%--                <button class="btn btn-secondary catBtn" type="button">--%>
+<%--                    Services--%>
+<%--                </button>--%>
+<%--                <br>--%>
+<%--                <button class="btn btn-secondary catBtn" type="button">--%>
+<%--                    Jobs--%>
+<%--                </button>--%>
+<%--            </div>--%>
+<%--        </li>--%>
+
+<%--        <hr>--%>
+
+<%--        &lt;%&ndash;            CREATE AD&ndash;%&gt;--%>
+<%--        <li class="catBtn">--%>
+<%--            <button class="btn btn-secondary" type="button" href="#">Create Ad</button>--%>
+<%--        </li>--%>
+<%--    </ul>--%>
+<%--</nav>--%>
+<%--</body>--%>

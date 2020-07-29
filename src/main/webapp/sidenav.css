@@ -1,4 +1,70 @@
-.navbar{
-    transform: rotate(-90deg);
-    margin-top: 10vh;
+.sideNav{
+    transform: rotate(90deg);
+    margin-top: 21vh;
+    width: 43vw;
+    height: 44vh;
+    border: 2px solid red;
+    float: left;
+    padding: 0;
+    margin-left: -12.4em;
+    position: sticky;
+    contain: content;
 }
+
+.sideWords{
+    /*transform: rotate(-90deg);*/
+}
+
+.sideUl{
+    /*transform: rotate(90deg);*/
+    /*margin-top: 21vh;*/
+    text-decoration: none;
+    list-style-type: none;
+    position: relative;
+    margin-top: -1em;
+    /*margin-bottom: 5em;*/
+    /*margin-left: 20em;*/
+    border: 2px solid red;
+    height: 90vh;
+    width: 22vw;
+}
+
+.sideNav input button{
+    width: 20vw;
+}
+
+.sideNav ul a{
+    color: black;
+}
+
+.sideNav ul li{
+   width: 20vw;
+    text-align: center;
+    margin-top: -2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.welcome{
+    /*padding: 1em;*/
+}
+
+.searchAd{
+    width: 20vw;
+}
+
+.searchCat{
+    width: 20vw;
+}
+
+.createAd{
+ width: 20vw;
+    padding-top: -.5em;
+}
+
+.catBtn{
+    padding: 1em;
+    width: 20vw
+}
+
+
