@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +22,7 @@ import static java.lang.Integer.parseInt;
 import static java.lang.Long.parseLong;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
-@MultipartConfig
+@MultipartConfig(maxFileSize = 16177215)
 public class CreateAdServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,42 +38,22 @@ public class CreateAdServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+
         User user = (User) request.getSession().getAttribute("user");
-        FileInputStream fs = null;
 
         Date now = new Date();
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat formatter = new SimpleDateFormat(pattern);
         String mysqlDateString = formatter.format(now);
 
-//        File adImg = new File(request.getParameter("adImg"));
-//        fs = new FileInputStream(adImg);
-//        FileInputStream inputStream = new FileInputStream(adImg);
-//        Part img = request.getPart("adImg");
-//        FileInputStream img =  DaoFactory.getAdsDao().img(request.getParameter("adImg"));
-
-        // obtains the upload file part in this multipart request
-        Part filePart = request.getPart("adImg");
-        InputStream inputStream = null;
-        if (filePart != null) {
-            // debug messages
-            System.out.println(filePart.getName());
-            System.out.println(filePart.getSize());
-            System.out.println(filePart.getContentType());
-            // obtains input stream of the upload file
-            inputStream = filePart.getInputStream();
-        }
-
-//        String message = null; // message will be sent back to client
-
+//        byte[] adImg = DaoFactory.getAdsDao().convertFileContentToBlob(request.getParameter("adImg"));
 
         Ad ad = new Ad(
             user.getId(),
             request.getParameter("title"),
             request.getParameter("description"),
-            mysqlDateString,
-            inputStream
-//            request.getParameter("adImg")
+            mysqlDateString
         );
 
         long category = Long.parseLong((request.getParameter("category")));
@@ -81,7 +62,6 @@ public class CreateAdServlet extends HttpServlet {
         DaoFactory.getAdsDao().insert(ad);
 
         DaoFactory.getCatsDao().insert(insert, category);
-//        DaoFactory.getimgDao().insert(insert, adImg);
         response.sendRedirect("/ads");
     }
 }

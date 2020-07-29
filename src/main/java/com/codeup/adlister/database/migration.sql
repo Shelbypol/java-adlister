@@ -25,9 +25,9 @@ CREATE TABLE ads(
     description TEXT,
     saved boolean,
     created_date VARCHAR(20),
-    ad_img BLOB,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+
 );
 
 CREATE TABLE cats(
@@ -52,13 +52,13 @@ SELECT * FROM cats;
 SELECT * FROM ad_cats;
 
 
-INSERT INTO ads (user_id ,title, description, created_date) VALUES ( 2,'TEST', 'test description','2020-07-27');
+INSERT INTO ads (user_id ,title, description, created_date) VALUES ( 2,'TEST', 'test description','2020-07-27', );
 INSERT INTO ad_cats (ads_id, cats_id) VALUES (1, 2);
 
 DROP TABLE IF EXISTS ad_cats;
 DROP TABLE IF EXISTS cats;
 DROP TABLE IF EXISTS ads;
-DROP TABLE IF EXISTS users;
+# DROP TABLE IF EXISTS users;
 # DROP TABLE images;
 
 

@@ -3,12 +3,10 @@ package com.codeup.adlister.dao;
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 import models.Config;
+import org.apache.commons.io.FileUtils;
 
 import javax.servlet.http.Part;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,14 +49,12 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description, created_date, ad_img) VALUES (?, ?, ?, ?, ?)";
+            String insertQuery = "INSERT INTO ads(user_id, title, description, created_date) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
             stmt.setString(4, ad.getCreated_date());
-//            FileInputStream fin = new FileInputStream("ad_img");
-            stmt.setBinaryStream(5, ad.getAdImg());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -67,6 +63,21 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error creating a new ad.", e);
         }
     }
+
+    public byte[] convertFileContentToBlob(String filePath) throws IOException {
+        byte[] fileContent = null;
+        try {
+            fileContent = FileUtils.readFileToByteArray(new File(filePath));
+        } catch (IOException e) {
+            throw new IOException("Unable to convert file to byte array. " +
+                    e.getMessage());
+        }
+        return fileContent;
+    }
+
+
+
+
 
     @Override
     public List<Ad> category(long id) {
@@ -100,8 +111,7 @@ public class MySQLAdsDao implements Ads {
             rs.getString("title"),
             rs.getString("description"),
             rs.getBoolean("saved"),
-            rs.getString("created_date"),
-                (InputStream) rs.getBinaryStream("ad_img")
+            rs.getString("created_date")
         );
     }
 
