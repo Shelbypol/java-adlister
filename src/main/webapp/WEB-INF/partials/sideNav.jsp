@@ -21,22 +21,15 @@
         <%--        WELCOME --%>
         <li class="welcome">
             <a class="" href="#">
-                <c:choose>
-                    <c:when test="${sessionScope.user}">
-                        <h2>Welcome, ${sessionScope.user.username}!</h2>
-                    </c:when>
-
-                    <c:otherwise>
-                        <h2>Welcome!</h2>
-                    </c:otherwise>
-                </c:choose>
+                <h3>Welcome ${sessionScope.user.username}!</h3>
             </a>
         <hr>
         </li>
 
         <%--        SEARCH ADS--%>
         <li class="searchAd">
-            <form class="form-inline my-2 my-lg-0 navBtn">
+<%--            <h4>Search Ads</h4>--%>
+            <form class="form-inline my-2 my-lg-0 adBtn">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search ads" aria-label="Search">
             </form>
         </li>
@@ -45,106 +38,32 @@
 
         <%--   CATEGORY  --%>
         <li class="searchCat">
+            <form action="/searchCategory" method="get">
             <div>
-                <h3>Search Categories</h3>
-                <%--                <div class="form-group">--%>
-                <%--                    <label class="category" for="category"></label>--%>
-                <button class="btn btn-secondary catBtn" type="button">
-                    For Sale
-                </button>
+                <input type="submit" name="category" value="1" placeholder="For Sale" class="btn btn-secondary catBtn">
                 <br>
-                <button class="btn btn-secondary catBtn" type="button">
-                    Community
-                </button>
+                <input type="submit" name="category" value="2" placeholder="Community" class="btn btn-secondary catBtn">
                 <br>
-                <button class="btn btn-secondary catBtn" type="button">
-                    Housing
-                </button>
+                <input type="submit" name="category" value="3" placeholder="Housing" class="btn btn-secondary catBtn">
                 <br>
-                <button class="btn btn-secondary catBtn" type="button">
-                    Services
-                </button>
+                <input type="submit" name="category" value="4" placeholder="Services" class="btn btn-secondary catBtn">
                 <br>
-                <button class="btn btn-secondary catBtn" type="button">
-                    Jobs
-                </button>
+                <input type="submit" name="category" value="5" placeholder="Jobs" class="btn btn-secondary catBtn">
+
             </div>
+            </form>
         </li>
 
         <hr>
 
         <%--            CREATE AD--%>
-        <li class="catBtn">
-            <button class="btn btn-secondary" type="button" href="#">Create Ad</button>
+        <li>
+            <button class="btn btn-secondary adBtn" type="button" href="#"><h4>Create Ad</h4></button>
+<%--            <h4>Search Categories</h4>--%>
         </li>
     </ul>
-<%--</nav>--%>
+
+
+
 </body>
 </html>
-
-
-<%--<nav class="navbar navbar-expand-lg navbar-light bg-light sideNav">--%>
-<%--    <ul class="sideWords navbar-brand">--%>
-
-<%--        &lt;%&ndash;        WELCOME &ndash;%&gt;--%>
-<%--        <li class="welcome">--%>
-<%--            <a class="" href="#">--%>
-<%--                <c:choose>--%>
-<%--                    <c:when test="${sessionScope.user}">--%>
-<%--                        <h2>Welcome, ${sessionScope.user.username}!</h2>--%>
-<%--                    </c:when>--%>
-
-<%--                    <c:otherwise>--%>
-<%--                        <h2>Welcome!</h2>--%>
-<%--                    </c:otherwise>--%>
-<%--                </c:choose>--%>
-<%--            </a>--%>
-<%--            <hr>--%>
-<%--        </li>--%>
-
-<%--        &lt;%&ndash;        SEARCH ADS&ndash;%&gt;--%>
-<%--        <li class="searchAd">--%>
-<%--            <form class="form-inline my-2 my-lg-0 navBtn">--%>
-<%--                <input class="form-control mr-sm-2" type="search" placeholder="Search ads" aria-label="Search">--%>
-<%--            </form>--%>
-<%--        </li>--%>
-
-<%--        <hr>--%>
-
-<%--        &lt;%&ndash;   CATEGORY  &ndash;%&gt;--%>
-<%--        <li class="searchCat">--%>
-<%--            <div>--%>
-<%--                <h3>Search Categories</h3>--%>
-<%--                &lt;%&ndash;                <div class="form-group">&ndash;%&gt;--%>
-<%--                &lt;%&ndash;                    <label class="category" for="category"></label>&ndash;%&gt;--%>
-<%--                <button class="btn btn-secondary catBtn" type="button">--%>
-<%--                    For Sale--%>
-<%--                </button>--%>
-<%--                <br>--%>
-<%--                <button class="btn btn-secondary catBtn" type="button">--%>
-<%--                    Community--%>
-<%--                </button>--%>
-<%--                <br>--%>
-<%--                <button class="btn btn-secondary catBtn" type="button">--%>
-<%--                    Housing--%>
-<%--                </button>--%>
-<%--                <br>--%>
-<%--                <button class="btn btn-secondary catBtn" type="button">--%>
-<%--                    Services--%>
-<%--                </button>--%>
-<%--                <br>--%>
-<%--                <button class="btn btn-secondary catBtn" type="button">--%>
-<%--                    Jobs--%>
-<%--                </button>--%>
-<%--            </div>--%>
-<%--        </li>--%>
-
-<%--        <hr>--%>
-
-<%--        &lt;%&ndash;            CREATE AD&ndash;%&gt;--%>
-<%--        <li class="catBtn">--%>
-<%--            <button class="btn btn-secondary" type="button" href="#">Create Ad</button>--%>
-<%--        </li>--%>
-<%--    </ul>--%>
-<%--</nav>--%>
-<%--</body>--%>

@@ -1,31 +1,14 @@
-.sideNav{
-    transform: rotate(90deg);
-    margin-top: 21vh;
-    width: 43vw;
-    height: 44vh;
-    border: 2px solid red;
-    float: left;
-    padding: 0;
-    margin-left: -12.4em;
-    position: sticky;
-    contain: content;
-}
-
-.sideWords{
-    /*transform: rotate(-90deg);*/
+nav {
+    border-bottom: 3px solid grey;
 }
 
 .sideUl{
-    /*transform: rotate(90deg);*/
-    /*margin-top: 21vh;*/
     text-decoration: none;
     list-style-type: none;
-    position: relative;
-    margin-top: -1em;
-    /*margin-bottom: 5em;*/
-    /*margin-left: 20em;*/
-    border: 2px solid red;
-    height: 90vh;
+    margin-top: -1.3em;
+    margin-right: 2em;
+    border-right: 1px solid grey;
+    height: 91vh;
     width: 22vw;
 }
 
@@ -35,6 +18,7 @@
 
 .sideNav ul a{
     color: black;
+
 }
 
 .sideNav ul li{
@@ -43,6 +27,7 @@
     margin-top: -2em;
     padding-top: 1em;
     padding-bottom: 1em;
+    color: black;
 }
 
 .welcome{
@@ -50,7 +35,9 @@
 }
 
 .searchAd{
-    width: 20vw;
+    /*width: 20vw;*/
+    /*padding-top: -5em;*/
+    /*padding-bottom: ;*/
 }
 
 .searchCat{
@@ -63,8 +50,21 @@
 }
 
 .catBtn{
-    padding: 1em;
+    margin-top: .25em;
+    margin-bottom: .25em;
+    padding: .50em;
     width: 20vw
+}
+
+.adBtn{
+    padding-top: .5em;
+    padding-bottom: .5em;
+    /*text-align:;*/
+    width:  20vw;
+}
+
+.sideUl input{
+    width: 20vw;
 }
 
 
