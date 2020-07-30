@@ -6,6 +6,7 @@
         <jsp:param name="title" value="Edit Profile"/>
     </jsp:include>
     <style>
+        <%@include file="/css/adIndexCss.css" %>
         <%@include file="/css/createAd.css" %>
     </style>
 </head>
@@ -18,19 +19,19 @@
         <h2>Update, ${sessionScope.user.username}</h2>
         <hr>
         <br>
-        <form action="/update-profile" method="post" class="col-md-12">
+        <form action="/update-profile" method="post">
             <div class="col-md-6">
                 <label class="username" for="username">Username</label>
-                <input id="username" name="username" class="form-control input-sm" type="text" required>
+                <input class="form-control" id="username" name="username" type="text" required>
             </div>
             <br>
             <div class="col-md-6">
                 <label class="email" for="email">Email</label>
-                <input id="email" name="email" class="form-control input-sm" type="text" required>
+                <input class="form-control "id="email" name="email"  type="text" required>
             </div>
             <br>
             <div class="col-md-6">
-                <input class="col-md-6" type="hidden" id="id" name="id" value="${sessionScope.user.id}">
+                <input type="hidden" id="id" name="id" value="${sessionScope.user.id}">
                 <input type="submit" class="btn btn-dark btn-block col-md-6">
             </div>
         </form>

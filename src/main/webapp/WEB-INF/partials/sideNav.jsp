@@ -38,21 +38,27 @@
             <h4>Search Categories</h4>
             <div>
                 <form action="/cat-search" method="get"  class="catForm">
+                    <input type="hidden" name="catId" value="${cats.id}">
                     <input type="submit" name="catBtn" value="All Ads" class="btn btn-secondary catBtn">
                 </form>
                 <form action="/cat-search" method="get"  class="catForm">
+                    <input type="hidden" name="catId" value="${cats.id}">
                     <input type="submit" name="catBtn" value="For Sale" class="btn btn-secondary catBtn">
                 </form>
                 <form action="/cat-search" method="get" class="catForm">
+                    <input type="hidden" name="catId" value="${cats.id}">
                     <input type="submit" name="catBtn" value="Community" class="btn btn-secondary catBtn">
                 </form>
                 <form action="/cat-search" method="get" class="catForm">
+                    <input type="hidden" name="catId" value="${cats.id}">
                     <input type="submit" name="catBtn" value="Housing" class="btn btn-secondary catBtn">
                 </form>
                 <form action="/cat-search" method="get" class="catForm">
+                    <input type="hidden" name="catId" value="${cats.id}">
                     <input type="submit" name="catBtn" value="Services" class="btn btn-secondary catBtn">
                 </form>
                 <form action="/cat-search" method="get" class="catForm">
+                    <input type="hidden" name="catId" value="${cats.id}">
                     <input type="submit" name="catBtn" value="Jobs" class="btn btn-secondary catBtn">
                 </form>
             </div>

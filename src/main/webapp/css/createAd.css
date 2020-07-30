@@ -1,8 +1,9 @@
 .createContainerContainer{
-    width: 73%;
-    margin-left: 15em;
-    display:inline-block;
-    border: 2px solid red;
+    width: 50%;
+    /*height: 50%;*/
+    margin-left: 12em;
+    /*display:inline-block;*/
+    /*border: 2px solid red;*/
 }
 
 

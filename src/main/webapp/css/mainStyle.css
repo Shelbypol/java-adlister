@@ -1,0 +1,24 @@
+.main{
+    width: 100vw;
+    height: 50vh;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.form{
+   margin-top: 5em;
+}
+
+.form input{
+    background-color: dimgray;
+    color: white;
+    font-weight: bold;
+    /*font-size: 2em;*/
+    width: 6em;
+    /*padding-left: 2em;*/
+    /*padding-right: 2em;*/
+    /*padding-top: .5em;*/
+    /*padding-bottom: .5em;*/
+    /*text-align: center;*/
+}

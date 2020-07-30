@@ -3,29 +3,27 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Welcome to my site!" />
+        <jsp:param name="title" value="Welcome to my site!"/>
     </jsp:include>
+    <style>
+
+        <%@include file="/css/mainStyle.css" %>
+    </style>
 </head>
 <body>
 
-<%--<div class="jumbotron jumbotron-fluid">--%>
-<%--    <div class="container">--%>
-<%--        <h1 class="display-4">Fluid jumbotron</h1>--%>
-<%--        <img class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</img>--%>
-<%--    </div>--%>
-<%--</div>--%>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <h1>Welcome to the Adlister!</h1>
-        <form action="/register">
-            <a href="/register"><input type="submit" class="btn register-btn btn-light" value="Sign Me Up!"></a>
-        </form>
-        <form action="/login">
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<div class="container main">
+    <h1>Welcome to the Adlister!</h1>
+    <form action="/register" class="form col-md-4">
+        <a href="/register"><input type="submit" class="btn register-btn btn-light" value="Sign Up!"></a>
+    </form>
+    <form action="/login" class="form col-md-4">
         <a href="/login"><input type="submit" class="btn login-btn btn-light" value="Login!"></a>
     </form>
-        <form action="/ads">
-            <a href="/ads"><input type="submit" class="btn login-btn btn-light" value="View ads!"></a>
-        </form>
-    </div>
+    <form action="/ads" class="form col-md-4">
+        <a href="/ads"><input type="submit" class="btn login-btn btn-light" value="View ads!"></a>
+    </form>
+</div>
 </body>
 </html>

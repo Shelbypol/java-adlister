@@ -29,20 +29,35 @@
             <textarea id="description" name="description" class="form-control"></textarea>
         </div>
         <br>
-        <div class="col-md-3">
-<%--            <label class="category" for="category">Category</label>--%>
-    <button type="button" class="btn btn-secondary dropdown-toggle col-md-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <hr>
+<%--        <div class="btn-group">--%>
+<%--            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--%>
+<%--                Category--%>
+<%--            </button>--%>
+<%--            <div class="dropdown-menu dropdown-menu-right" name="category" id="category">--%>
+<%--                <button class="dropdown-item" value="2" type="button">For Sale</button>--%>
+<%--                <button class="dropdown-item" value="3" type="button">Community</button>--%>
+<%--                <button class="dropdown-item" value="4" type="button">Housing</button>--%>
+<%--                <button class="dropdown-item" value="5" type="button">Services</button>--%>
+<%--                <button class="dropdown-item" value="6" type="button">Jobs</button>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+
+        <br>
+        <div class="col-md-6 dropdown">
+    <button type="button" aria-labelledby="dropdownMenu2"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
        Category
     </button>
-            <select class="dropdown-menu" name="category" id="category">
-                <option value="2" selected>For Sale</option>
-                <option value="3">Community</option>
-                <option value="4">Housing</option>
-                <option value="5">Services</option>
-                <option value="6">Jobs</option>
+            <label for="category"></label>
+            <select class="dropdown-menu" name="category" id="category" aria-labelledby="dropdownMenu2">
+                <option class="dropdown-item" value="2" >For Sale</option>
+                <option class="dropdown-item" value="3">Community</option>
+                <option class="dropdown-item" value="4">Housing</option>
+                <option class="dropdown-item" value="5">Services</option>
+                <option class="dropdown-item" value="6">Jobs</option>
             </select>
         </div>
-        <br>
+
         <div class="col-md-6">
         <input type="submit" class="btn btn-block btn-dark">
         </div>

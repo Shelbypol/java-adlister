@@ -52,14 +52,18 @@ SELECT * FROM cats;
 SELECT * FROM ad_cats;
 
 
+DELETE FROM ads WHERE id = 8;
+
+
 INSERT INTO ads (user_id ,title, description, created_date) VALUES ( 2,'TEST', 'test description','2020-07-27', );
 INSERT INTO ad_cats (ads_id, cats_id) VALUES (1, 2);
 
-DROP TABLE IF EXISTS ad_cats;
-DROP TABLE IF EXISTS cats;
-DROP TABLE IF EXISTS ads;
+# DROP TABLE IF EXISTS ad_cats;
+# DROP TABLE IF EXISTS cats;
+# DROP TABLE IF EXISTS ads;
 # DROP TABLE IF EXISTS users;
 # DROP TABLE images;
+
 
 
 # CREATE TABLE images(
