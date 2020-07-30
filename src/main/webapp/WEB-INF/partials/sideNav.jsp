@@ -39,26 +39,25 @@
     <li class="searchCat">
             <h4>Search Categories</h4>
             <div>
-                <form action="ads/all-ads" method="get">
-                    <input type="submit" name="1" value="All Ads" class="btn btn-secondary catBtn">
+                <form action="/cat-search" method="get">
+                    <input type="submit" name="catBtn" value="All Ads" class="btn btn-secondary catBtn">
                 </form>
-                <form action="../cats/for-sale" method="get">
-                    <input type="submit" name="2" value="For Sale" class="btn btn-secondary catBtn">
+                <form action="/cat-search" method="get">
+                    <input type="submit" name="catBtn" value="For Sale" class="btn btn-secondary catBtn">
                 </form>
-                <form action="../cats/community" method="get">
-                    <input type="submit" name="3" value="Community" class="btn btn-secondary catBtn">
+                <form action="/cat-search" method="get">
+                    <input type="submit" name="catBtn" value="Community" class="btn btn-secondary catBtn">
                 </form>
-                <form action="../cats/housing" method="get">
-                    <input type="submit" name="4" value="Housing" class="btn btn-secondary catBtn">
+                <form action="/cat-search" method="get">
+                    <input type="submit" name="catBtn" value="Housing" class="btn btn-secondary catBtn">
                 </form>
-                <form action="../cats/services" method="get">
-                    <input type="submit" name="5" value="Services" class="btn btn-secondary catBtn">
+                <form action="/cat-search" method="get">
+                    <input type="submit" name="catBtn" value="Services" class="btn btn-secondary catBtn">
                 </form>
-                <form action="../cats/jobs" method="get">
-                    <input type="submit" name="6" value="Jobs" class="btn btn-secondary catBtn">
+                <form action="/cat-search" method="get">
+                    <input type="submit" name="catBtn" value="Jobs" class="btn btn-secondary catBtn">
                 </form>
             </div>
-    </li>
     <hr>
 
     <%--            CREATE AD--%>

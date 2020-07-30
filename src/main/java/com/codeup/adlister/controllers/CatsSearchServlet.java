@@ -15,15 +15,28 @@ import java.util.List;
 import static java.lang.Long.parseLong;
 
 @WebServlet(name ="controllers.CatsSearchServlet", urlPatterns = "/cat-search")
-public class CatsSearchServlet {
+public class CatsSearchServlet extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String catBtn = request.getParameter("catBtn");
+        Long cats = null;
+        if(catBtn.equalsIgnoreCase("all ads")){
+            cats = 1L;
+        } else if (catBtn.equalsIgnoreCase("for sale")) {
+            cats = 2L;
+        } else if (catBtn.equalsIgnoreCase("community")) {
+            cats = 3L;
+        } else if (catBtn.equalsIgnoreCase("housing")) {
+            cats = 4L;
+        }else if (catBtn.equalsIgnoreCase("services")) {
+            cats = 5L;
+        }else if (catBtn.equalsIgnoreCase("jobs")) {
+            cats = 6L;
+        }
 
-        long cat = Long.parseLong((request.getParameter("category")));
-        System.out.println(cat);
-
-        List<Ad> category = DaoFactory.getAdsDao().category(cat);
+        List<Ad> category = DaoFactory.getAdsDao().category(cats);
         request.setAttribute("category", category);
-        request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/ads/cat-search.jsp").forward(request, response);
     }
+
 }

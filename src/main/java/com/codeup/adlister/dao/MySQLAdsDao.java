@@ -60,14 +60,13 @@ public class MySQLAdsDao implements Ads {
     @Override
     public List<Ad> category(long id) {
         PreparedStatement stmt = null;
-        long catId = id;
         try {
             stmt = connection.prepareStatement("SELECT * FROM ads\n" +
                     "    left join users u on ads.user_id = u.id\n" +
                     "    left join ad_cats ac on ads.id = ac.ads_id\n" +
                     "    left join cats c on ac.cats_id = c.id\n" +
                     "    WHERE cats_id = ?");
-            stmt.setLong(1, catId);
+            stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {

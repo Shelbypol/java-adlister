@@ -13,39 +13,20 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <jsp:include page="/WEB-INF/partials/sideNav.jsp"/>
-<h1>is this working</h1>
+<h1>"${param.category.toString()}"</h1>
 
 <%--  need to make conditionals that display what user selects  --%>
-
-<%--    <c:when test="${param.category == param.category}">--%>
-<%--        <div class="hero-section">--%>
-<%--            <div class="card-grid">--%>
-<%--                <c:forEach var="cat" items="${category}">--%>
-<%--                    <a href="${pageContext.request.contextPath}/ads/ad?ads_id=${cat.id}" class="card">--%>
-<%--&lt;%&ndash;                        <div class="card__background" style="background-image: url(/img/dad.png)"></div>&ndash;%&gt;--%>
-<%--                        <div class="card__content">--%>
-<%--                            <p class="card__category">Category</p>--%>
-<%--                            <h3 class="card__heading">${cat.title}</h3>--%>
-<%--                            <p>${cat.description}</p>--%>
-<%--                        </div>--%>
-<%--                    </a>--%>
-<%--                </c:forEach>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </c:when>--%>
-<%--    <c:otherwise>--%>
-<%--        ${"No Match!"}--%>
-<%--    </c:otherwise>--%>
-<%--</c:choose>--%>
-
-
-
-<%--    <c:forEach var="ad" items="${ads}">--%>
-<%--        <div class="col-md-3">--%>
-<%--            <h2>${ad.title}</h2>--%>
-<%--            <p>${ad.description}</p>--%>
-<%--        </div>--%>
-<%--    </c:forEach>--%>
+<c:choose>
+    <c:when test="${param.category} == ${param.category}">
+        <c:forEach var="ad" items="${ad}">
+         <h5>${ad.title}</h5>
+            <p>${ad.description}</p>
+        </c:forEach>
+    </c:when>
+    <c:otherwise>
+        ${"No Match!"}
+    </c:otherwise>
+</c:choose>
 
 </body>
 </html>
