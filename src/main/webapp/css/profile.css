@@ -1,11 +1,13 @@
 .profile{
-    /*width: 70%;*/
-    margin-left: 15em;
+    margin-left: 12em;
     contain: content;
+    width: 75%;
 }
 
 .profileBtn{
-    width: 15em;
-    font-size: 6em;
-    background-color: dimgray;
+    width: 6em;
+    font-size: 3em;
+    /*background-color: gray;*/
+    padding: 1em;
+    margin: .25em;
 }

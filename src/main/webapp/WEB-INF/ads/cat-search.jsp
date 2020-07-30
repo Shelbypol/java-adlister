@@ -8,6 +8,7 @@
     </jsp:include>
     <style>
         <%@include file="/css/adIndexCss.css" %>
+        <%@include file="/css/catSearch.css" %>
     </style>
 </head>
 <body>
@@ -15,19 +16,20 @@
 <jsp:include page="/WEB-INF/partials/sideNav.jsp"/>
 <h1>${param.category.toString()}</h1>
 
-<c:forEach var="ad" items="${ads}">
-    <div class="row">
-        <div class="card col-md-3 border">
-            <div class="card-body">
-                <h5 class="card-title">${ad.title}</h5>
-                <p class="card-text">${ad.description}</p>
-                <a href="#" class="card-link">Save <3</a>
-                <a href="#" class="card-link">Request Contact</a>
-            </div>
-        </div>
-    </div>
-</c:forEach>
+<div class="adContainer">
 
+        <c:forEach var="ad" items="${ads}">
+            <div class="card border">
+                <div class="card-body catCard">
+                    <h5 class="card-title">${ad.title}</h5>
+                    <p class="card-text">${ad.description}</p>
+                    <a href="#" class="card-link">Save <3</a>
+                    <a href="#" class="card-link">Request Contact</a>
+                </div>
+            </div>
+        </c:forEach>
+
+</div>
 
 <%--<c:choose>--%>
 <%--    <c:when test="${param.category} == ${param.category}">--%>

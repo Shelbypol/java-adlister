@@ -1,0 +1,15 @@
+.catCard{
+    width:18em;
+    height: 30vh;
+    border: 2px solid grey;
+    display: inline-block;
+    float:left;
+    justify-content: space-evenly;
+}
+
+.adContainer{
+    width: 73%;
+    margin-left: 16em;
+    display: flex;
+    flex-wrap: wrap;
+}

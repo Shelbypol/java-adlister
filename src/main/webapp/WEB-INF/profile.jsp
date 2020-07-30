@@ -5,6 +5,9 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
+    <style>
+        <%@include file="/css/profile.css" %>
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
@@ -33,24 +36,22 @@
     </form>
     </div>
 
-
-    <%--ads card--%>
-    <div class="ad-cards-container">
-        <c:forEach var="ad" items="${ads}">
-            <div class="ads-card">
-                <div class="title">
-                    <h2>${ad.title}</h2>
-                    <p>${ad.description}</p>
-                    <p><a href="/ads/ad?ad_id=${ad.id}">View Ad</a></p>
-                    <input type="submit" class="btn edit-btn" value="Edit">
-                    <input type="submit" class="btn delete-btn" value="Delete">
-                </div>
-                <div class="bar">
-                    <div class="emptybar"></div>
-                    <div class="filledbar"></div>
-                </div>
-            </div>
-        </c:forEach>
-    </div>
+<%--    <div class="ad-cards-container">--%>
+<%--        <c:forEach var="ad" items="${ads}">--%>
+<%--            <div class="ads-card">--%>
+<%--                <div class="title">--%>
+<%--                    <h2>${ad.title}</h2>--%>
+<%--                    <p>${ad.description}</p>--%>
+<%--                    <p><a href="/ads/ad?ad_id=${ad.id}">View Ad</a></p>--%>
+<%--                    <input type="submit" class="btn edit-btn" value="Edit">--%>
+<%--                    <input type="submit" class="btn delete-btn" value="Delete">--%>
+<%--                </div>--%>
+<%--                <div class="bar">--%>
+<%--                    <div class="emptybar"></div>--%>
+<%--                    <div class="filledbar"></div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </c:forEach>--%>
+<%--    </div>--%>
 </body>
 </html>
