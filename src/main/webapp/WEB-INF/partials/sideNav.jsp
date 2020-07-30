@@ -19,9 +19,7 @@
 <ul class="sideWords navbar-brand sideUl">
     <%--        WELCOME --%>
     <li class="welcome">
-        <a class="" href="#">
-            <h4>${sessionScope.user.username}</h4>
-        </a>
+        <a href="/login" type="submit"><h4>${sessionScope.user.username}</h4></a>
         <hr>
     </li>
 
@@ -39,30 +37,30 @@
     <li class="searchCat">
             <h4>Search Categories</h4>
             <div>
-                <form action="/cat-search" method="get">
+                <form action="/cat-search" method="get"  class="catForm">
                     <input type="submit" name="catBtn" value="All Ads" class="btn btn-secondary catBtn">
                 </form>
-                <form action="/cat-search" method="get">
+                <form action="/cat-search" method="get"  class="catForm">
                     <input type="submit" name="catBtn" value="For Sale" class="btn btn-secondary catBtn">
                 </form>
-                <form action="/cat-search" method="get">
+                <form action="/cat-search" method="get" class="catForm">
                     <input type="submit" name="catBtn" value="Community" class="btn btn-secondary catBtn">
                 </form>
-                <form action="/cat-search" method="get">
+                <form action="/cat-search" method="get" class="catForm">
                     <input type="submit" name="catBtn" value="Housing" class="btn btn-secondary catBtn">
                 </form>
-                <form action="/cat-search" method="get">
+                <form action="/cat-search" method="get" class="catForm">
                     <input type="submit" name="catBtn" value="Services" class="btn btn-secondary catBtn">
                 </form>
-                <form action="/cat-search" method="get">
+                <form action="/cat-search" method="get" class="catForm">
                     <input type="submit" name="catBtn" value="Jobs" class="btn btn-secondary catBtn">
                 </form>
             </div>
     <hr>
 
     <%--            CREATE AD--%>
-    <form action="ads/create" method="get">
-        <input class="btn btn-secondary bg-dark adBtn" type="submit" value="Create Ad">
+    <form action="/create" method="get">
+        <input class="btn bg-dark adBtn creatBtn" type="submit" value="Create Ad">
     </form>
 
 </ul>

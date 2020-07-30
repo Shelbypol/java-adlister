@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" id="topnav">
+<nav class="navbar navbar-default bg-dark" id="topnav">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">

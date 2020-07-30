@@ -18,6 +18,9 @@ import static java.lang.Long.parseLong;
 public class CatsSearchServlet extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+        request.getRequestDispatcher("/WEB-INF/ads/cat-search.jsp").forward(request, response);
+
         String catBtn = request.getParameter("catBtn");
         Long cats = null;
         if(catBtn.equalsIgnoreCase("all ads")){

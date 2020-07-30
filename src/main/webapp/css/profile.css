@@ -1,0 +1,11 @@
+.profile{
+    /*width: 70%;*/
+    margin-left: 15em;
+    contain: content;
+}
+
+.profileBtn{
+    width: 15em;
+    font-size: 6em;
+    background-color: dimgray;
+}

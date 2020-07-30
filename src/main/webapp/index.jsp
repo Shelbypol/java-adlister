@@ -21,10 +21,10 @@
             <a href="/register"><input type="submit" class="btn register-btn btn-light" value="Sign Me Up!"></a>
         </form>
         <form action="/login">
-        <a href="/login"><input type="submit" class="btn login-btn btn-light" value="Take me to my profile!"></a>
+        <a href="/login"><input type="submit" class="btn login-btn btn-light" value="Login!"></a>
     </form>
         <form action="/ads">
-            <a href="/ads"><input type="submit" class="btn login-btn btn-light" value="Take me to view ads!"></a>
+            <a href="/ads"><input type="submit" class="btn login-btn btn-light" value="View ads!"></a>
         </form>
     </div>
 </body>

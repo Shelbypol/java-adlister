@@ -16,41 +16,54 @@
 
 <div class="container catContainer">
     <div class="row">
-        <div class="card col-md-3 center">
-            <img class="card-img-top imgCard" src="all.png" alt="Card image cap">
-            <div class="card-body">
+        <a href="/cat-search" type="submit" name="catBtn" method="get" value="1">
+            <div class="card col-md-3 center">
+                <img class="card-img-top imgCard" src="all.png" alt="Card image cap">
+                <div class="card-body">
+                </div>
             </div>
-        </div>
-        <div class="card col-md-3">
-            <img class="card-img-top imgCard" src="for-sale.png" alt="Card image cap">
-            <div class="card-body">
+        </a>
+
+        <a href="/cat-search" type="submit" name="catBtn" method="get" value="2">
+            <div class="card col-md-3">
+                <img class="card-img-top imgCard" src="for-sale.png" alt="Card image cap">
+                <div class="card-body">
+                </div>
             </div>
-        </div>
-        <div class="card col-md-3">
-            <img class="card-img-top imgCard" src="community.png" alt="Card image cap">
-            <div class="card-body">
+        </a>
+        <a href="/cat-search" type="submit" name="catBtn" method="get" value="3">
+            <div class="card col-md-3">
+                <img class="card-img-top imgCard" src="community.png" alt="Card image cap">
+                <div class="card-body">
+                </div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="row rowTwo center">
+        <a href="/cat-search" type="submit" name="catBtn" method="get" value="4">
         <div class="card col-md-3">
             <img class="card-img-top imgCard" src="housing.png" alt="Card image cap">
             <div class="card-body">
             </div>
         </div>
+        </a>
+
+        <a href="/cat-search" type="submit" name="catBtn" method="get" value="5">
         <div class="card col-md-3">
             <img class="card-img-top imgCard" src="job.png" alt="Card image cap">
             <div class="card-body">
             </div>
         </div>
+        </a>
+        <a href="/cat-search" type="submit" name="catBtn" method="get" value="6">
         <div class="card col-md-3">
             <img class="card-img-top imgCard" src="services.png" alt="Card image cap">
             <div class="card-body">
             </div>
         </div>
+        </a> value=1
     </div>
 </div>
-
 
 
 </body>

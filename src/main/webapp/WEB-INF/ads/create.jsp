@@ -7,46 +7,40 @@
     </jsp:include>
     <style>
         <%@include file="/css/adIndexCss.css" %>
+        <%@include file="/css/createAd.css" %>
     </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <jsp:include page="/WEB-INF/partials/sideNav.jsp"/>
 
-<div class="container">
+<div class="container createContainer">
     <h1>Create a new Ad</h1>
-    <form action="/ads/create" method="post">
-        <div class="form-group">
+    <form action="/create" method="post">
+        <div class="">
             <label for="title">Title</label>
             <input id="title" name="title" class="form-control" type="text">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="description">Description</label>
             <textarea id="description" name="description" class="form-control"></textarea>
         </div>
-        <div class="form-group">
-            <label class="category" for="category">Category</label>
-            <select multiple class="dropdown" name="category" id="category">
-                <option value="1" selected>For Sale</option>
-                <option value="2">Community</option>
-                <option value="3">Housing</option>
-                <option value="4">Services</option>
-                <option value="5">Jobs</option>
+        <div class="">
+<%--            <label class="category" for="category">Category</label>--%>
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       Category
+    </button>
+            <select class="dropdown-menu" name="category" id="category">
+                <option value="2" selected>For Sale</option>
+                <option value="3">Community</option>
+                <option value="4">Housing</option>
+                <option value="5">Services</option>
+                <option value="6">Jobs</option>
             </select>
         </div>
-<%--        <div class="file-field">--%>
-<%--            <div class="btn btn-primary btn-sm float-right">--%>
-<%--                <span>Choose file</span>--%>
-<%--                <input type="file">--%>
-<%--            </div>--%>
-<%--            <div class="file-path-wrapper">--%>
-<%--                <input class="file" size="50" type="text" name="adImg" placeholder="Upload your file">--%>
-<%--            </div>--%>
-<%--        </div>--%>
-        <input type="submit" class="btn btn-block btn-primary">
+        <input type="submit" class="btn btn-block btn-dark">
     </form>
-
-
 </div>
+
 </body>
 </html>
