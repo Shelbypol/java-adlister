@@ -16,18 +16,22 @@
 
 <div class="container createContainer">
     <h1>Create a new Ad</h1>
+    <hr>
+    <br>
     <form action="/create" method="post">
-        <div class="">
+        <div class="col-md-6">
             <label for="title">Title</label>
             <input id="title" name="title" class="form-control" type="text">
         </div>
-        <div class="">
+        <br>
+        <div class="col-md-6">
             <label for="description">Description</label>
             <textarea id="description" name="description" class="form-control"></textarea>
         </div>
-        <div class="">
+        <br>
+        <div class="col-md-3">
 <%--            <label class="category" for="category">Category</label>--%>
-    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="btn btn-secondary dropdown-toggle col-md-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
        Category
     </button>
             <select class="dropdown-menu" name="category" id="category">
@@ -38,7 +42,10 @@
                 <option value="6">Jobs</option>
             </select>
         </div>
+        <br>
+        <div class="col-md-6">
         <input type="submit" class="btn btn-block btn-dark">
+        </div>
     </form>
 </div>
 

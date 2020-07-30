@@ -61,7 +61,7 @@
             <div class="card-body">
             </div>
         </div>
-        </a> value=1
+        </a>
     </div>
 </div>
 

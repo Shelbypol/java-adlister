@@ -5,9 +5,11 @@
 }
 
 .profileBtn{
-    width: 6em;
+    width: 10em;
     font-size: 3em;
     /*background-color: gray;*/
     padding: 1em;
     margin: .25em;
+    text-align: center;
+    border-radius: 20%;
 }
