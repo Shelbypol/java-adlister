@@ -16,55 +16,57 @@
 </head>
 <body>
 <%--<nav class="navbar navbar-expand-lg navbar-light bg-light sideNav">--%>
-    <ul class="sideWords navbar-brand sideUl">
-        <%--        WELCOME --%>
-        <li class="welcome">
-            <a class="" href="#">
-               <h4>${sessionScope.user.username}</h4>
-            </a>
+<ul class="sideWords navbar-brand sideUl">
+    <%--        WELCOME --%>
+    <li class="welcome">
+        <a class="" href="#">
+            <h4>${sessionScope.user.username}</h4>
+        </a>
         <hr>
-        </li>
+    </li>
 
-        <%--        SEARCH ADS--%>
-        <li class="searchAd">
-<%--            <h4>Search Ads</h4>--%>
-            <form class="form-inline my-2 my-lg-0 adBtn">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search ads" aria-label="Search">
-            </form>
-        </li>
+    <%--        SEARCH ADS--%>
+    <li class="searchAd">
+        <%--            <h4>Search Ads</h4>--%>
+        <form class="form-inline my-2 my-lg-0 adBtn">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search ads" aria-label="Search">
+        </form>
+    </li>
 
-        <hr>
+    <hr>
 
-        <%--   CATEGORY  --%>
-        <li class="searchCat">
-            <form action="/searchCategory" method="get">
-                <h4>Search Categories</h4>
+    <%--   CATEGORY  --%>
+    <li class="searchCat">
+            <h4>Search Categories</h4>
             <div>
-                <input type="submit" name="category" value="All Ads" class="btn btn-secondary catBtn">
-                <br>
-                <input type="submit" name="category" value="For Sale" class="btn btn-secondary catBtn">
-                <br>
-                <input type="submit" name="category" value="Community" class="btn btn-secondary catBtn">
-                <br>
-                <input type="submit" name="category" value="Housing" class="btn btn-secondary catBtn">
-                <br>
-                <input type="submit" name="category" value="Services" class="btn btn-secondary catBtn">
-                <br>
-                <input type="submit" name="category" value="Jobs" class="btn btn-secondary catBtn">
-
+                <form action="ads/all-ads" method="get">
+                    <input type="submit" name="1" value="All Ads" class="btn btn-secondary catBtn">
+                </form>
+                <form action="../cats/for-sale" method="get">
+                    <input type="submit" name="2" value="For Sale" class="btn btn-secondary catBtn">
+                </form>
+                <form action="../cats/community" method="get">
+                    <input type="submit" name="3" value="Community" class="btn btn-secondary catBtn">
+                </form>
+                <form action="../cats/housing" method="get">
+                    <input type="submit" name="4" value="Housing" class="btn btn-secondary catBtn">
+                </form>
+                <form action="../cats/services" method="get">
+                    <input type="submit" name="5" value="Services" class="btn btn-secondary catBtn">
+                </form>
+                <form action="../cats/jobs" method="get">
+                    <input type="submit" name="6" value="Jobs" class="btn btn-secondary catBtn">
+                </form>
             </div>
-            </form>
-        </li>
+    </li>
+    <hr>
 
-        <hr>
+    <%--            CREATE AD--%>
+    <form action="ads/create" method="get">
+        <input class="btn btn-secondary bg-dark adBtn" type="submit" value="Create Ad">
+    </form>
 
-        <%--            CREATE AD--%>
-            <form action="ads/create" method="get">
-                <input class="btn btn-secondary bg-dark adBtn" type="submit" value="Create Ad">
-            </form>
-
-    </ul>
-
+</ul>
 
 
 </body>

@@ -22,7 +22,7 @@ import static java.lang.Integer.parseInt;
 import static java.lang.Long.parseLong;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
-//@MultipartConfig(maxFileSize = 16177215)
+
 public class CreateAdServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,8 +46,6 @@ public class CreateAdServlet extends HttpServlet {
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat formatter = new SimpleDateFormat(pattern);
         String mysqlDateString = formatter.format(now);
-
-//        byte[] adImg = DaoFactory.getAdsDao().convertFileContentToBlob(request.getParameter("adImg"));
 
         Ad ad = new Ad(
             user.getId(),

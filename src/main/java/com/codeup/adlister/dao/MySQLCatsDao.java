@@ -23,6 +23,7 @@ public class MySQLCatsDao implements Cats {
             throw new RuntimeException("Error connecting to the database!", e);
         }
     }
+
     @Override
     public List<Cat> All() {
         PreparedStatement stmt = null;
@@ -34,11 +35,6 @@ public class MySQLCatsDao implements Cats {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
-
-//    @Override
-//    public List<Cat> cat() {
-//        return null;
-//    }
 
     private Cat extractCat(ResultSet rs) throws SQLException {
         return new Cat(
@@ -62,7 +58,6 @@ public class MySQLCatsDao implements Cats {
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, adsId);
             stmt.setLong(2, catsId);
-
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);

@@ -40,13 +40,6 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public FileInputStream img(String img) throws FileNotFoundException {
-        File image = new File(img);
-        FileInputStream fis = new FileInputStream ( image );
-        return fis;
-    }
-
-    @Override
     public Long insert(Ad ad) {
         try {
             String insertQuery = "INSERT INTO ads(user_id, title, description, created_date) VALUES (?, ?, ?, ?)";
@@ -62,17 +55,6 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
-    }
-
-    public byte[] convertFileContentToBlob(String filePath) throws IOException {
-        byte[] fileContent = null;
-        try {
-            fileContent = FileUtils.readFileToByteArray(new File(filePath));
-        } catch (IOException e) {
-            throw new IOException("Unable to convert file to byte array. " +
-                    e.getMessage());
-        }
-        return fileContent;
     }
 
     @Override
