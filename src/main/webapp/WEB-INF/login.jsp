@@ -18,8 +18,14 @@
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block" value="Log In">
+            <input type="submit" class="btn btn-dark btn-block" value="Log In">
         </form>
+        <form action="/register" method="get">
+            <input name="register" type="submit" class="btn btn-dark" value="Not A User?">
+        </form>
+<%--        <form action="/">--%>
+<%--            <input name="reset" type="reset" class="btn btn-dark" value="Clear Form">--%>
+<%--        </form>--%>
     </div>
 </body>
 </html>

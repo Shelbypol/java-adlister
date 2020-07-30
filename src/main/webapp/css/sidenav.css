@@ -9,20 +9,20 @@
     margin-right: 2em;
     border-right: 1px solid grey;
     height: 91vh;
-    width: 22vw;
+    width: 17vw;
+    /*position: fixed;*/
 }
 
 .sideNav input button{
-    width: 20vw;
+    width: 15vw;
 }
 
 .sideNav ul a{
     color: black;
-
 }
 
 .sideNav ul li{
-   width: 20vw;
+   width: 15vw;
     text-align: center;
     margin-top: -2em;
     padding-top: 1em;
@@ -41,11 +41,11 @@
 }
 
 .searchCat{
-    width: 20vw;
+    width: 15vw;
 }
 
 .createAd{
- width: 20vw;
+ width: 15vw;
     padding-top: -.5em;
 }
 
@@ -53,18 +53,18 @@
     margin-top: .25em;
     margin-bottom: .25em;
     padding: .50em;
-    width: 20vw
+    width: 15vw
 }
 
 .adBtn{
     padding-top: .5em;
     padding-bottom: .5em;
     /*text-align:;*/
-    width:  20vw;
+    width:  15vw;
 }
 
 .sideUl input{
-    width: 20vw;
+    width: 15vw;
 }
 
 

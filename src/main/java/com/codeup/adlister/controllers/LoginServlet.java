@@ -39,5 +39,16 @@ public class LoginServlet extends HttpServlet {
         } else {
             response.sendRedirect("/login");
         }
+
+
+//        Not a User Btn
+//        boolean registerBtn = Boolean.parseBoolean(request.getParameter("register"));
+//
+//
+//        if (registerBtn) {
+//            response.sendRedirect("/register");
+//        }
+
+
     }
 }

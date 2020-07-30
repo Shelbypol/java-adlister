@@ -1,5 +1,24 @@
 
 .imgCard{
-    width: 250px;
+    width: 225px;
     height: 175px;
+    border: 3px solid grey;
+}
+
+.card{
+    margin: 2em;
+}
+
+.row{
+    margin-left: 5em;
+}
+
+.rowTwo{
+    margin-top: -25em;
+}
+
+.catContainer{
+    width: 80%;
+    margin-left: 18em;
+    /*border: 2px solid red;*/
 }

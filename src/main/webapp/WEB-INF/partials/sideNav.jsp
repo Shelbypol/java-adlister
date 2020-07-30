@@ -17,11 +17,10 @@
 <body>
 <%--<nav class="navbar navbar-expand-lg navbar-light bg-light sideNav">--%>
     <ul class="sideWords navbar-brand sideUl">
-
         <%--        WELCOME --%>
         <li class="welcome">
             <a class="" href="#">
-                <h3>Welcome ${sessionScope.user.username}!</h3>
+               <h4>${sessionScope.user.username}</h4>
             </a>
         <hr>
         </li>
@@ -39,18 +38,19 @@
         <%--   CATEGORY  --%>
         <li class="searchCat">
             <form action="/searchCategory" method="get">
+                <h4>Search Categories</h4>
             <div>
-                <input type="submit" name="category" value="1" placeholder="All Ads" class="btn btn-secondary catBtn">
+                <input type="submit" name="category" value="All Ads" class="btn btn-secondary catBtn">
                 <br>
-                <input type="submit" name="category" value="2" placeholder="For Sale" class="btn btn-secondary catBtn">
+                <input type="submit" name="category" value="For Sale" class="btn btn-secondary catBtn">
                 <br>
-                <input type="submit" name="category" value="3" placeholder="Community" class="btn btn-secondary catBtn">
+                <input type="submit" name="category" value="Community" class="btn btn-secondary catBtn">
                 <br>
-                <input type="submit" name="category" value="4" placeholder="Housing" class="btn btn-secondary catBtn">
+                <input type="submit" name="category" value="Housing" class="btn btn-secondary catBtn">
                 <br>
-                <input type="submit" name="category" value="5" placeholder="Services" class="btn btn-secondary catBtn">
+                <input type="submit" name="category" value="Services" class="btn btn-secondary catBtn">
                 <br>
-                <input type="submit" name="category" value="6" placeholder="Jobs" class="btn btn-secondary catBtn">
+                <input type="submit" name="category" value="Jobs" class="btn btn-secondary catBtn">
 
             </div>
             </form>
@@ -59,10 +59,10 @@
         <hr>
 
         <%--            CREATE AD--%>
-        <li>
-            <button class="btn btn-secondary adBtn" type="button" href="#"><h4>Create Ad</h4></button>
-<%--            <h4>Search Categories</h4>--%>
-        </li>
+            <form action="ads/create" method="get">
+                <input class="btn btn-secondary bg-dark adBtn" type="submit" value="Create Ad">
+            </form>
+
     </ul>
 
 
