@@ -1,6 +1,5 @@
 package com.codeup.adlister.dao;
 
-import com.codeup.adlister.models.Image;
 import models.Config;
 
 public class DaoFactory {

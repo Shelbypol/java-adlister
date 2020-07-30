@@ -27,7 +27,7 @@
             <br>
             <div class="col-md-6">
                 <label class="email" for="email">Email</label>
-                <input class="form-control "id="email" name="email"  type="text" required>
+                <input class="form-control" id="email" name="email"  type="text" required>
             </div>
             <br>
             <div class="col-md-6">

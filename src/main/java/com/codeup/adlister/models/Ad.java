@@ -34,27 +34,6 @@ public class Ad {
         this.created_date = created_date;
     }
 
-//    public Ad(String title, String description, String created_date) {
-//        this.title = title;
-//        this.description = description;
-//        this.created_date =created_date;
-//    }
-//
-//    public Ad(long userId, String title, String description) {
-//        this.userId = userId;
-//        this.title = title;
-//        this.description = description;
-//    }
-//
-//    public Ad(long id, String title, String description, boolean saved, String created_date) {
-//        this.id = id;
-//        this.title = title;
-//        this.description = description;
-//        this.saved = saved;
-//        this.created_date =created_date;
-//    }
-
-
     public long getId() {
         return id;
     }
