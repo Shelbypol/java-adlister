@@ -15,7 +15,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Edit or Delete Your (d)Ad</h1>
+<h1>Edit or Delete Your Ad</h1>
 <h1>${ad.title}</h1>
 <p>
     <c:out value="${ad.title}"/>
@@ -23,7 +23,5 @@
 </p>
 <br>
 
-<%--<a href="${templink}" onclick="if (!(confirm('Are you sure you want to delete?'))) return false">Delete</a>--%>
-<%--<button type="submit">Delete Post</button>--%>
 </body>
 </html>
