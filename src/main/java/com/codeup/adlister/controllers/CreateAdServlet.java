@@ -54,12 +54,26 @@ public class CreateAdServlet extends HttpServlet {
             mysqlDateString
         );
 
-        long category = Long.parseLong((request.getParameter("category")));
+        String catBtn = request.getParameter("category");
+        long cats = 0;
+        if(catBtn.equalsIgnoreCase("all ads")){
+            cats = 1L;
+        } else if (catBtn.equalsIgnoreCase("for sale")) {
+            cats = 2L;
+        } else if (catBtn.equalsIgnoreCase("community")) {
+            cats = 3L;
+        } else if (catBtn.equalsIgnoreCase("housing")) {
+            cats = 4L;
+        }else if (catBtn.equalsIgnoreCase("services")) {
+            cats = 5L;
+        }else if (catBtn.equalsIgnoreCase("jobs")) {
+            cats = 6L;
+        }
+        
+//        long category = Long.parseLong((request.getParameter("category")));
         long insert = (DaoFactory.getAdsDao().insert(ad));
-
-        DaoFactory.getAdsDao().insert(ad);
-
-        DaoFactory.getCatsDao().insert(insert, category);
+        
+        DaoFactory.getCatsDao().insert(insert, cats);
         response.sendRedirect("/ads");
     }
 }

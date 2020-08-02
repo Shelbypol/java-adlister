@@ -19,16 +19,16 @@
 <div class="adContainer">
 
         <c:forEach var="ad" items="${ads}">
-<%--            <div class="card border py-2">--%>
-<%--                <div class="card-body catCard py-2">--%>
+            <div class="card border py-2">
+                <div class="card-body catCard py-2">
                     <h5 class="card-title center py-2">${ad.title}</h5>
                     <p class="card-text py-2">${ad.description}</p>
                     <br>
                     <hr>
                     <a href="#" class="card-link">Save <3</a>
                     <a href="#" class="card-link">Request Contact</a>
-<%--                </div>--%>
-<%--            </div>--%>
+                </div>
+            </div>
         </c:forEach>
 
 </div>

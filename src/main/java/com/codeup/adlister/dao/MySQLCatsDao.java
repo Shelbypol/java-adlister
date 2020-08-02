@@ -65,6 +65,31 @@ public class MySQLCatsDao implements Cats {
         return null;
     }
 
+//    public List<Cat> list() throws SQLException {
+//        List<Cat> listCategory = new ArrayList<>();
+//        PreparedStatement stmt = null;
+//        try {
+//            stmt = connection.prepareStatement("SELECT * FROM cats ORDER BY cat_name");
+//            Statement statement = connection.createStatement();
+//            ResultSet result = statement.executeQuery(String.valueOf(stmt));
+//
+//            while (result.next()) {
+//                int id = result.getInt("category_id");
+//                String name = result.getString("name");
+//                Cat category = new Cat(id, name);
+//
+//                listCategory.add(category);
+//            }
+//
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//            throw ex;
+//        }
+//
+//        return listCategory;
+//    }
+
+
 
 
     @Override
